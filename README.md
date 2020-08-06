@@ -20,3 +20,11 @@ For x86 - Win32, x64 Debug and Release
 By Jeff Kubitz - Hot3dx
 
 Bitcoin Donations Accepted!
+
+BTC 33DN8TgAe879tDkhsCEpneoVrydHbasuLm
+
+BCHABC qruhxl8y2753fg0qfx7t8zfqzw92rvaxussk7fcnke
+
+LTC MEQVCCxa5ZZkmGqAfYfRvipNcY4BaTRrFm
+
+By: Ico
