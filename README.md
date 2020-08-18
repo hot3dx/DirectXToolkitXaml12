@@ -2,6 +2,8 @@
 
 ## The DirectXToolkitXaml12 is a DirectX 12 Toolkit Xaml Library
 
+![Ico](https://github.com/hot3dx/DirectXToolkitXaml12/blob/master/Assets/App1-DirectXToolKitXaml12-Sample-App.png)
+
 The Front Code of AppXamlDX12 other than that in the Graphics folder
 can easily be used to create a DirectX 12 Xaml UWP App because this 
 library contains all the files in that directory.
@@ -16,6 +18,14 @@ C++ 17
 build tools 142
 
 For x86 - Win32, x64 Debug and Release
+Yes they actually work as of 08/18/20
+
+1) Start 3D by click app bottom bar thre dots ... lower right
+2) Click "Start" Button on AppBottomBar
+
+Keys q,w,e,a,s,d move camera X,Y,Z
+
+Mouse Down Draws Points on Grid (Must Click Once First)
 
 Bitcoin Donations Accepted!
 
