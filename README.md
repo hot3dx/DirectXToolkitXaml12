@@ -2,7 +2,7 @@
 
 ## The DirectXToolkitXaml12 is a DirectX 12 Toolkit Xaml Library
 
-![Ico](https://github.com/hot3dx/DirectXToolkitXaml12/blob/master/Assets/App1-DirectXToolKitXaml12-Sample-App.png)
+![App1 Example Screenshot](https://github.com/hot3dx/DirectXToolkitXaml12/blob/master/Assets/App1-DirectXToolKitXaml12-Sample-App.png)
 
 The Front Code of AppXamlDX12 other than that in the Graphics folder
 can easily be used to create a DirectX 12 Xaml UWP App because this 
