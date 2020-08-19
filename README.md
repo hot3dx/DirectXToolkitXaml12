@@ -36,7 +36,7 @@ Mouse.h & .cpp
 Keyboard.h & .cpp
 were removed 8/18/20 replaced with DirectXPage.xaml.h and .cpp code
 
-Bitcoin Donations Accepted!
+# Bitcoin Donations Accepted!
 
 BTC 33DN8TgAe879tDkhsCEpneoVrydHbasuLm
 
