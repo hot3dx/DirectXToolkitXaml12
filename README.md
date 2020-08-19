@@ -8,8 +8,10 @@ The Front Code of AppXamlDX12 other than that in the Graphics folder
 can easily be used to create a DirectX 12 Xaml UWP App because this 
 library contains all the files in that directory.
 
-Nice part: the DirectXToolkitXaml12 library only needs to occupy one 
-folder and all your apps code can link to it!
+# Nice part: the DirectXToolkitXaml12 library only needs to occupy one 
+## folder and all your apps code can link to it!
+# Use C:\DirectXToolKitXaml12
+for zero problems with App1 sample
 
 Windows 10 OS Build 2004
 Visual Studio C++ 16.6.5
