@@ -153,16 +153,7 @@
     <ClCompile Include="Graphics\BinaryWriter.cpp">
       <Filter>Src\Shared</Filter>
     </ClCompile>
-    <ClCompile Include="Graphics\GamePad.cpp">
-      <Filter>Src\Shared</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\Keyboard.cpp">
-      <Filter>Src\Shared</Filter>
-    </ClCompile>
     <ClCompile Include="Graphics\Geometry.cpp">
-      <Filter>Src\Shared</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\Mouse.cpp">
       <Filter>Src\Shared</Filter>
     </ClCompile>
     <ClCompile Include="Graphics\SimpleMath.cpp">

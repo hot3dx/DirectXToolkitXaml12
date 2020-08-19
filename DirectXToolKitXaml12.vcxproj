@@ -128,6 +128,7 @@
       <ConformanceMode>false</ConformanceMode>
       <AdditionalOptions>/bigobj /JMC /Yu"pch.h" /MP /GS /analyze- /W3 /wd"4453" /wd"28204" /Zc:wchar_t /I"C:\Users\hot3dx-home\Source\Repos\Xaml\DirectXToolKitXaml12" %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4453;28024</DisableSpecificWarnings>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -160,6 +161,9 @@
       <FunctionLevelLinking>
       </FunctionLevelLinking>
       <Optimization>Disabled</Optimization>
+      <BasicRuntimeChecks>
+      </BasicRuntimeChecks>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -208,7 +212,7 @@
       <FloatingPointModel>Precise</FloatingPointModel>
       <ConformanceMode>false</ConformanceMode>
       <AdditionalOptions>/bigobj /JMC /Yu"pch.h" /MP /GS /analyze- /W3 /wd"4453" /wd"28204" /Zc:wchar_t /I"C:\Users\hot3dx-home\Source\Repos\Xaml\DirectXToolKitXaml12" %(AdditionalOptions)</AdditionalOptions>
-      <LanguageStandard>Default</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <DisableSpecificWarnings>4453;28024</DisableSpecificWarnings>
       <CompileAsManaged>
@@ -216,6 +220,9 @@
       <FunctionLevelLinking>
       </FunctionLevelLinking>
       <ProgramDataBaseFileName>$(IntDir)$(PlatformToolVersion).pdb</ProgramDataBaseFileName>
+      <CompileAs>Default</CompileAs>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <ForcedUsingFiles>$(VCToolsInstallDir)lib\x86\store\references\platform.winmd;%(ForcedUsingFiles)</ForcedUsingFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -251,11 +258,12 @@
       <IntrinsicFunctions>false</IntrinsicFunctions>
       <PreprocessorDefinitions>
       </PreprocessorDefinitions>
-      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <BasicRuntimeChecks>
+      </BasicRuntimeChecks>
       <FloatingPointModel>Precise</FloatingPointModel>
       <ConformanceMode>false</ConformanceMode>
       <AdditionalOptions>/bigobj /JMC /Yu"pch.h" /MP /GS /analyze- /W3 /wd"4453" /wd"28204" /Zc:wchar_t /I"C:\Users\hot3dx-home\Source\Repos\Xaml\DirectXToolKitXaml12" %(AdditionalOptions)</AdditionalOptions>
-      <LanguageStandard>Default</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <WholeProgramOptimization>false</WholeProgramOptimization>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>
@@ -265,6 +273,8 @@
       </CompileAsManaged>
       <SupportJustMyCode>true</SupportJustMyCode>
       <ProgramDataBaseFileName>$(IntDir)$(PlatformToolVersion).pdb</ProgramDataBaseFileName>
+      <AssemblerOutput>All</AssemblerOutput>
+      <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -368,19 +378,16 @@
     <ClCompile Include="Graphics\EffectPipelineStateDescription.cpp" />
     <ClCompile Include="Graphics\EffectTextureFactory.cpp" />
     <ClCompile Include="Graphics\EnvironmentMapEffect.cpp" />
-    <ClCompile Include="Graphics\GamePad.cpp" />
     <ClCompile Include="Graphics\GeometricPrimitive.cpp" />
     <ClCompile Include="Graphics\Geometry.cpp" />
     <ClCompile Include="Graphics\GraphicsMemory.cpp" />
     <ClCompile Include="Graphics\Hot3dx12Rotate.cpp" />
     <ClCompile Include="Graphics\Hot3dxCamera.cpp" />
     <ClCompile Include="Graphics\Hot3dxGeometry.cpp" />
-    <ClCompile Include="Graphics\Keyboard.cpp" />
     <ClCompile Include="Graphics\LinearAllocator.cpp" />
     <ClCompile Include="Graphics\Model.cpp" />
     <ClCompile Include="Graphics\ModelLoadSDKMESH.cpp" />
     <ClCompile Include="Graphics\ModelLoadVBO.cpp" />
-    <ClCompile Include="Graphics\Mouse.cpp" />
     <ClCompile Include="Graphics\MyResourceUploadBatch.cpp" />
     <ClCompile Include="Graphics\NormalMapEffect.cpp" />
     <ClCompile Include="Graphics\PBREffect.cpp" />
