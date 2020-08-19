@@ -17,6 +17,10 @@ Visual Studio C++ 16.6.5
 C++ 17
 build tools 142
 
+**** To see the features uou must download the 
+**** App1 example and compile it after you 
+**** download and build this project library
+
 For x86 - Win32, x64 Debug and Release
 Yes they actually work as of 08/18/20
 
@@ -26,6 +30,11 @@ Yes they actually work as of 08/18/20
 Keys q,w,e,a,s,d move camera X,Y,Z
 
 Mouse Down Draws Points on Grid (Must Click Once First)
+
+Gamepad.h & .cpp
+Mouse.h & .cpp
+Keyboard.h & .cpp
+were removed 8/18/20 replaced with DirectXPage.xaml.h and .cpp code
 
 Bitcoin Donations Accepted!
 
