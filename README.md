@@ -17,9 +17,9 @@ Visual Studio C++ 16.6.5
 C++ 17
 build tools 142
 
-**** To see the features uou must download the 
-**** App1 example and compile it after you 
-**** download and build this project library
+-- To see the features you must download the 
+-- App1 example and compile it after you 
+-- download and build this project library
 
 For x86 - Win32, x64 Debug and Release
 Yes they actually work as of 08/18/20
