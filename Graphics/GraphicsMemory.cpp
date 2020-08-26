@@ -210,20 +210,15 @@ public:
     {
         mDeviceAllocator = std::make_unique<DeviceAllocator>(device);
 
-#if !defined(_XBOX_ONE) || !defined(_TITLE)
+//#if !defined(_XBOX_ONE) || !defined(_TITLE)
         if (s_graphicsMemory.find(device) != s_graphicsMemory.cend())
         {
             throw std::exception("GraphicsMemory is a per-device singleton");
         }// Old s_graphicsMemory[device] = this; // produced error
-#ifdef _DEBUG
-        OutputDebugString(L"\nBegin: s_graphicsMemory[device] = reinterpret_cast< Line 217");
-#endif
-        //s_graphicsMemory[device] = reinterpret_cast<DirectX::GraphicsMemory::Impl*>(this);
-        s_graphicsMemory[device] = (DirectX::GraphicsMemory::Impl*)this;
-#ifdef _DEBUG
-        OutputDebugString(L"\nBegin: s_graphicsMemory[device] = reinterpret_cast< Line 218");
-#endif
-#endif
+        s_graphicsMemory[device] = reinterpret_cast<DirectX::GraphicsMemory::Impl*>(this);
+        //s_graphicsMemory[device] = (DirectX::GraphicsMemory::Impl*)this;
+
+//#endif
     }
 
     GraphicsResource Allocate(size_t size, size_t alignment)
