@@ -621,16 +621,12 @@ Concurrency::task<void> EndXaml(
                 // Delete the batch
                 // Because the vectors contain smart-pointers, their destructors will
                 // fire and the resources will be released.
-#ifdef _DEBUG
-                OutputDebugString(L"ResourceUloadBatch1 loaded UploadBatch\n");
-#endif
+
                 delete uploadBatch;
                 
             }).then([this]
             {
-#ifdef _DEBUG
-                OutputDebugString(L"ResourceUloadBatch2 return doBatch\n");
-#endif
+
                 // Reset our state
                 mInBeginEndBlock = false;
                 mList.Reset();
@@ -639,9 +635,7 @@ Concurrency::task<void> EndXaml(
                 // Swap above should have cleared these
                 assert(mTrackedObjects.empty());
                 assert(mTrackedMemoryResources.empty());
-#ifdef _DEBUG
-                OutputDebugString(L"ResourceUloadBatch2 loaded UploadBatch\n");
-#endif
+
                 
             }); return doBatch;
 
