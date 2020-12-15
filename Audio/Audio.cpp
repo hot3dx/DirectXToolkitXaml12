@@ -7,7 +7,7 @@
 
 #include "pch.h"
 #include "Audio.h"
-#include "..\Graphics\PlatformHelpers.h"
+#include "Graphics\PlatformHelpers.h"
 
 using namespace Microsoft::WRL;
 using namespace Windows::Foundation;

@@ -7,11 +7,7 @@
 
 #include "pch.h"
 #include "MediaReader.h"
-#include "..\Graphics\PlatformHelpers.h"
-
-#pragma comment(lib, "mfplat.lib")
-#pragma comment(lib, "mfreadwrite.lib")
-#pragma comment(lib, "mfuuid.lib")
+#include "Graphics/PlatformHelpers.h"
 
 using namespace Microsoft::WRL;
 using namespace Windows::Storage;
@@ -31,7 +27,7 @@ WAVEFORMATEX* MediaReader::GetOutputWaveFormatEx()
     return &m_waveFormat;
 }
 
-Platform::Array<BYTE>^ MediaReader::LoadMedia(_In_ Platform::String^ filename)
+Platform::Array<byte>^ MediaReader::LoadMedia(_In_ Platform::String^ filename)
 {
     DirectX::ThrowIfFailed(
         MFStartup(MF_VERSION)
@@ -96,7 +92,7 @@ Platform::Array<BYTE>^ MediaReader::LoadMedia(_In_ Platform::String^ filename)
             10000000
             );
 
-    Platform::Array<BYTE>^ fileData = ref new Platform::Array<BYTE>(maxStreamLengthInBytes);
+    Platform::Array<byte>^ fileData = ref new Platform::Array<byte>(maxStreamLengthInBytes);
 
     ComPtr<IMFSample> sample;
     ComPtr<IMFMediaBuffer> mediaBuffer;
@@ -124,7 +120,7 @@ Platform::Array<BYTE>^ MediaReader::LoadMedia(_In_ Platform::String^ filename)
 
             for (DWORD i = 0; i < sampleBufferLength; i++)
             {
-                fileData[positionInData++] = (BYTE)audioData[i];
+                fileData[positionInData++] = audioData[i];
             }
         }
         if (flags & MF_SOURCE_READERF_ENDOFSTREAM)

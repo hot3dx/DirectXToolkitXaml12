@@ -7,14 +7,14 @@
 
 #pragma once
 
-
+#include "XAudio2Helpers.h"
 
 // SoundEffect:
 // This class plays a sound using XAudio2.  It uses a mastering voice provided
 // from the Audio class.  The sound data can be read from disk using the MediaReader
 // class.
 
-ref class SoundEffect sealed
+ref class SoundEffect
 {
 internal:
     SoundEffect();
