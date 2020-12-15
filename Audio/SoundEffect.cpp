@@ -8,8 +8,8 @@
 #include "pch.h"
 #include "Audio.h"
 #include "SoundEffect.h"
-//#include "..\App1\Common\DirectXHelper.h"
-#include "..\Graphics\PlatformHelpers.h"
+#include "Graphics\PlatformHelpers.h"
+
 SoundEffect::SoundEffect() :
     m_audioAvailable(false)
 {

@@ -1,10 +1,24 @@
+//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
+//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+//// PARTICULAR PURPOSE.
+////
+//// Copyright (c) Microsoft Corporation. All rights reserved
+
+#pragma once
+
+#include "pch.h"
+#include "XAudio2Helpers.h"
+#include <xaudio2.h>
+#include <xaudio2fx.h>
+// Audio:
 // This class uses XAudio2 to provide sound output.  It creates two
 // engines - one for music and the other for sound effects - each as
 // a separate mastering voice.
 // The SuspendAudio and ResumeAudio methods can be used to stop
 // and start all audio playback.
 
-ref class Audio sealed
+ref class Audio
 {
 internal:
     Audio();

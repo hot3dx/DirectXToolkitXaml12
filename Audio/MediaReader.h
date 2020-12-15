@@ -7,18 +7,19 @@
 
 #pragma once
 #include "pch.h"
+#include "XAudio2Helpers.h"
 
 // MediaReader:
 // This is a helper class for the SoundEffect class.  It reads small audio files
 // synchronously from the package installed folder and returns sound data as a
 // byte array.
-using namespace std;
-ref class MediaReader sealed
+
+ref class MediaReader
 {
 internal:
     MediaReader();
 
-    Platform::Array<BYTE>^ LoadMedia(_In_ Platform::String^ filename);
+    Platform::Array<byte>^ LoadMedia(_In_ Platform::String^ filename);
     WAVEFORMATEX* GetOutputWaveFormatEx();
 
 protected private:
