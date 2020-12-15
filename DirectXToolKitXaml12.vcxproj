@@ -129,6 +129,7 @@
       <AdditionalOptions>/bigobj /JMC /Yu"pch.h" /MP /GS /analyze- /W3 /wd"4453" /wd"28204" /Zc:wchar_t /I"C:\Users\hot3dx-home\Source\Repos\Xaml\DirectXToolKitXaml12" %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4453;28024</DisableSpecificWarnings>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -138,6 +139,7 @@
     <Lib>
       <AdditionalOptions>/IGNORE:4264 %(AdditionalOptions)</AdditionalOptions>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories); $(VCInstallDir)\lib\store\amd64; $(VCInstallDir)\lib\amd64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <ProjectReference>
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
@@ -164,6 +166,7 @@
       <BasicRuntimeChecks>
       </BasicRuntimeChecks>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -173,6 +176,7 @@
     <Lib>
       <AdditionalOptions>/IGNORE:4264 %(AdditionalOptions)</AdditionalOptions>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories); $(VCInstallDir)\lib\store\amd64; $(VCInstallDir)\lib\amd64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <ProjectReference>
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
@@ -183,6 +187,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <CompileAsWinRT>false</CompileAsWinRT>
       <SDLCheck>true</SDLCheck>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -195,6 +201,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <CompileAsWinRT>false</CompileAsWinRT>
       <SDLCheck>true</SDLCheck>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -223,6 +231,7 @@
       <CompileAs>Default</CompileAs>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <ForcedUsingFiles>$(VCToolsInstallDir)lib\x86\store\references\platform.winmd;%(ForcedUsingFiles)</ForcedUsingFiles>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -238,8 +247,7 @@
       <EnableDebuggingInformation />
     </FxCompile>
     <Lib>
-      <AdditionalDependencies>
-      </AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories); $(VCInstallDir)\lib\store\amd64; $(VCInstallDir)\lib\amd64</AdditionalLibraryDirectories>
       <AdditionalOptions>/IGNORE:4264 %(AdditionalOptions)</AdditionalOptions>
     </Lib>
@@ -275,6 +283,7 @@
       <ProgramDataBaseFileName>$(IntDir)$(PlatformToolVersion).pdb</ProgramDataBaseFileName>
       <AssemblerOutput>All</AssemblerOutput>
       <CompileAs>CompileAsCpp</CompileAs>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -292,8 +301,7 @@
       </EnableDebuggingInformation>
     </FxCompile>
     <Lib>
-      <AdditionalDependencies>
-      </AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories); $(VCInstallDir)\lib\store\amd64; $(VCInstallDir)\lib\amd64</AdditionalLibraryDirectories>
       <LinkTimeCodeGeneration />
       <AdditionalOptions>/IGNORE:4264 %(AdditionalOptions)</AdditionalOptions>
@@ -306,8 +314,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Audio\Audio.h" />
+    <ClInclude Include="Audio\AudioFileReader.h" />
     <ClInclude Include="Audio\MediaReader.h" />
     <ClInclude Include="Audio\SoundEffect.h" />
+    <ClInclude Include="Audio\XAudio2Helpers.h" />
     <ClInclude Include="DirectXToolKitXaml12.h" />
     <ClInclude Include="Graphics\AlignedNew.h" />
     <ClInclude Include="Graphics\Bezier.h" />
@@ -355,6 +365,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Audio\Audio.cpp" />
+    <ClCompile Include="Audio\AudioFileReader.cpp" />
     <ClCompile Include="Audio\MediaReader.cpp" />
     <ClCompile Include="Audio\SoundEffect.cpp" />
     <ClCompile Include="DirectXToolKitXaml12.cpp">
