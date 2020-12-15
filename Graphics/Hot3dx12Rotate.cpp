@@ -8,7 +8,6 @@
 // DirectX 12 C++ Move and Rotation Functions
 //--------------------------------------------------------------------------------------
 
-#include "pch.h"
 
 Hot3dx::Hot3dx12Rotate::Hot3dx12Rotate()
 {

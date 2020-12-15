@@ -418,7 +418,7 @@ void XM_CALLCONV SpriteFont::DrawString(_In_ SpriteBatch* spriteBatch, _In_z_ wc
         { { { -1, -1, 0, 0 } } },
         { { {  1, -1, 0, 0 } } },
         { { { -1,  1, 0, 0 } } },
-        { { {  1,  1, 0, 0 } } },
+        { { {  1,  1, 0, 0 } } }
     };
 
     // Lookup table indicates which axes are mirrored for each SpriteEffects enum value.
@@ -427,7 +427,7 @@ void XM_CALLCONV SpriteFont::DrawString(_In_ SpriteBatch* spriteBatch, _In_z_ wc
         { { { 0, 0, 0, 0 } } },
         { { { 1, 0, 0, 0 } } },
         { { { 0, 1, 0, 0 } } },
-        { { { 1, 1, 0, 0 } } },
+        { { { 1, 1, 0, 0 } } }
     };
 
     XMVECTOR baseOffset = origin;

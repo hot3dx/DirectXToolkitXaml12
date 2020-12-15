@@ -8,7 +8,6 @@
 //--------------------------------------------------------------------------------------
 
 #include "pch.h"
-#include "..\pch.h"
 #include "GraphicsMemory.h"
 #include "PlatformHelpers.h"
 #include "LinearAllocator.h"
@@ -217,7 +216,6 @@ public:
         }// Old s_graphicsMemory[device] = this; // produced error
         s_graphicsMemory[device] = reinterpret_cast<DirectX::GraphicsMemory::Impl*>(this);
         //s_graphicsMemory[device] = (DirectX::GraphicsMemory::Impl*)this;
-
 //#endif
     }
 

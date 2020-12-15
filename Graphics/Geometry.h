@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------------
 
 #include "VertexTypes.h"
-#include "..\Graphics\d3dx12.h"
+#include "Graphics\d3dx12.h"
 #include <d3d12.h>
 
 namespace DirectX

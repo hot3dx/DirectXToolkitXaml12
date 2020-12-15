@@ -96,18 +96,23 @@ const D3D12_SHADER_BYTECODE EffectBase<DualTextureEffectTraits>::VertexShaderByt
     { DualTextureEffect_VSDualTexture,        sizeof(DualTextureEffect_VSDualTexture)        },
     { DualTextureEffect_VSDualTextureNoFog,   sizeof(DualTextureEffect_VSDualTextureNoFog)   },
     { DualTextureEffect_VSDualTextureVc,      sizeof(DualTextureEffect_VSDualTextureVc)      },
-    { DualTextureEffect_VSDualTextureVcNoFog, sizeof(DualTextureEffect_VSDualTextureVcNoFog) },
-
+    { DualTextureEffect_VSDualTextureVcNoFog, sizeof(DualTextureEffect_VSDualTextureVcNoFog) }
 };
 
-
-template<>
-const int EffectBase<DualTextureEffectTraits>::VertexShaderIndices[] =
-{
-    0,      // basic
+/*
+List
+0,      // basic
     1,      // no fog
     2,      // vertex color
     3,      // vertex color, no fog
+ */
+template<>
+const int EffectBase<DualTextureEffectTraits>::VertexShaderIndices[] =
+{
+    0,
+    1,
+    2,
+    3
 };
 
 
@@ -115,18 +120,23 @@ template<>
 const D3D12_SHADER_BYTECODE EffectBase<DualTextureEffectTraits>::PixelShaderBytecode[] =
 {
     { DualTextureEffect_PSDualTexture,        sizeof(DualTextureEffect_PSDualTexture)        },
-    { DualTextureEffect_PSDualTextureNoFog,   sizeof(DualTextureEffect_PSDualTextureNoFog)   },
+    { DualTextureEffect_PSDualTextureNoFog,   sizeof(DualTextureEffect_PSDualTextureNoFog)   }
 
 };
 
-
-template<>
-const int EffectBase<DualTextureEffectTraits>::PixelShaderIndices[] =
-{
-    0,      // basic
+/* List
+0,      // basic
     1,      // no fog
     0,      // vertex color
     1,      // vertex color, no fog
+*/
+template<>
+const int EffectBase<DualTextureEffectTraits>::PixelShaderIndices[] =
+{
+    0,
+    1,
+    0,
+    1
 };
 
 

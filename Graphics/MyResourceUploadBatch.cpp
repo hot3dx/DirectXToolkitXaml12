@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------------
 
 #include "pch.h"
-#include "..\Graphics\d3dx12.h"
+#include "Graphics\d3dx12.h"
 #include "DirectXHelpers.h"
 #include "PlatformHelpers.h"
 #include "MyResourceUploadBatch.h"
@@ -621,13 +621,11 @@ Concurrency::task<void> EndXaml(
                 // Delete the batch
                 // Because the vectors contain smart-pointers, their destructors will
                 // fire and the resources will be released.
-
                 delete uploadBatch;
                 
             }).then([this]
             {
-
-                // Reset our state
+              // Reset our state
                 mInBeginEndBlock = false;
                 mList.Reset();
                 mCmdAlloc.Reset();
@@ -635,13 +633,9 @@ Concurrency::task<void> EndXaml(
                 // Swap above should have cleared these
                 assert(mTrackedObjects.empty());
                 assert(mTrackedMemoryResources.empty());
-
-                
             }); return doBatch;
 
-       // });
-        
-    }
+     }
     //////////////////////////
     /////////////////////////
 

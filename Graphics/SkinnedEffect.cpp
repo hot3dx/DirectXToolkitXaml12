@@ -140,14 +140,12 @@ const D3D12_SHADER_BYTECODE EffectBase<SkinnedEffectTraits>::VertexShaderBytecod
 
     { SkinnedEffect_VSSkinnedPixelLightingOneBoneBn,    sizeof(SkinnedEffect_VSSkinnedPixelLightingOneBoneBn)    },
     { SkinnedEffect_VSSkinnedPixelLightingTwoBonesBn,   sizeof(SkinnedEffect_VSSkinnedPixelLightingTwoBonesBn)   },
-    { SkinnedEffect_VSSkinnedPixelLightingFourBonesBn,  sizeof(SkinnedEffect_VSSkinnedPixelLightingFourBonesBn)  },
+    { SkinnedEffect_VSSkinnedPixelLightingFourBonesBn,  sizeof(SkinnedEffect_VSSkinnedPixelLightingFourBonesBn)  }
 };
 
-
-template<>
-const int EffectBase<SkinnedEffectTraits>::VertexShaderIndices[] =
-{
-    0,      // vertex lighting, one bone
+/*
+List
+0,      // vertex lighting, one bone
     0,      // vertex lighting, one bone, no fog
     1,      // vertex lighting, two bones
     1,      // vertex lighting, two bones, no fog
@@ -174,6 +172,34 @@ const int EffectBase<SkinnedEffectTraits>::VertexShaderIndices[] =
     10,     // pixel lighting (biased vertex normals), two bones, no fog
     11,     // pixel lighting (biased vertex normals), four bones
     11,     // pixel lighting (biased vertex normals), four bones, no fog
+    */
+template<>
+const int EffectBase<SkinnedEffectTraits>::VertexShaderIndices[] =
+{
+    0,
+    0,
+    1,
+    1,
+    2,
+    2,
+    3,
+    3,
+    4,
+    4,
+    5,
+    5,
+    6,
+    6,
+    7,
+    7,
+    8,
+    8,
+    9,
+    9,
+    10,
+    10,
+    11,
+    11
 };
 
 
@@ -182,14 +208,12 @@ const D3D12_SHADER_BYTECODE EffectBase<SkinnedEffectTraits>::PixelShaderBytecode
 {
     { SkinnedEffect_PSSkinnedVertexLighting,      sizeof(SkinnedEffect_PSSkinnedVertexLighting)      },
     { SkinnedEffect_PSSkinnedVertexLightingNoFog, sizeof(SkinnedEffect_PSSkinnedVertexLightingNoFog) },
-    { SkinnedEffect_PSSkinnedPixelLighting,       sizeof(SkinnedEffect_PSSkinnedPixelLighting)       },
+    { SkinnedEffect_PSSkinnedPixelLighting,       sizeof(SkinnedEffect_PSSkinnedPixelLighting)       }
 };
 
-
-template<>
-const int EffectBase<SkinnedEffectTraits>::PixelShaderIndices[] =
-{
-    0,      // vertex lighting, one bone
+/*
+List
+0,      // vertex lighting, one bone
     1,      // vertex lighting, one bone, no fog
     0,      // vertex lighting, two bones
     1,      // vertex lighting, two bones, no fog
@@ -216,6 +240,34 @@ const int EffectBase<SkinnedEffectTraits>::PixelShaderIndices[] =
     2,      // pixel lighting (biased vertex normals), two bones, no fog
     2,      // pixel lighting (biased vertex normals), four bones
     2,      // pixel lighting (biased vertex normals), four bones, no fog
+    */
+template<>
+const int EffectBase<SkinnedEffectTraits>::PixelShaderIndices[] =
+{
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
 };
 
 

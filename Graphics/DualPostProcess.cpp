@@ -63,7 +63,7 @@ namespace
     const D3D12_SHADER_BYTECODE pixelShaders[] =
     {
         { PostProcess_PSMerge,          sizeof(PostProcess_PSMerge) },
-        { PostProcess_PSBloomCombine,   sizeof(PostProcess_PSBloomCombine) },
+        { PostProcess_PSBloomCombine,   sizeof(PostProcess_PSBloomCombine) }
     };
 
     static_assert(_countof(pixelShaders) == DualPostProcess::Effect_Max, "array/max mismatch");

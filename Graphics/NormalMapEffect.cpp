@@ -130,14 +130,12 @@ const D3D12_SHADER_BYTECODE EffectBase<NormalMapEffectTraits>::VertexShaderBytec
     { NormalMapEffect_VSNormalPixelLightingTxVcNoSpec,   sizeof(NormalMapEffect_VSNormalPixelLightingTxVcNoSpec)   },
 
     { NormalMapEffect_VSNormalPixelLightingTxNoSpecBn,   sizeof(NormalMapEffect_VSNormalPixelLightingTxNoSpecBn)   },
-    { NormalMapEffect_VSNormalPixelLightingTxVcNoSpecBn, sizeof(NormalMapEffect_VSNormalPixelLightingTxVcNoSpecBn) },
+    { NormalMapEffect_VSNormalPixelLightingTxVcNoSpecBn, sizeof(NormalMapEffect_VSNormalPixelLightingTxVcNoSpecBn) }
 };
 
-
-template<>
-const int EffectBase<NormalMapEffectTraits>::VertexShaderIndices[] =
-{
-    0,     // pixel lighting + texture
+/*
+List 
+0,     // pixel lighting + texture
     0,     // pixel lighting + texture, no fog
     1,     // pixel lighting + texture + vertex color
     1,     // pixel lighting + texture + vertex color, no fog
@@ -156,6 +154,26 @@ const int EffectBase<NormalMapEffectTraits>::VertexShaderIndices[] =
     6,     // pixel lighting (biased vertex normal) + texture, no fog or specular
     7,     // pixel lighting (biased vertex normal) + texture + vertex color, no specular
     7,     // pixel lighting (biased vertex normal) + texture + vertex color, no fog or specular
+    */
+template<>
+const int EffectBase<NormalMapEffectTraits>::VertexShaderIndices[] =
+{
+    0,
+    0,
+    1,
+    1,
+    4,
+    4,
+    5,
+    5,
+    2,
+    2,
+    3,
+    3,
+    6,
+    6,
+    7,
+    7
 };
 
 
@@ -165,14 +183,12 @@ const D3D12_SHADER_BYTECODE EffectBase<NormalMapEffectTraits>::PixelShaderByteco
     { NormalMapEffect_PSNormalPixelLightingTx,          sizeof(NormalMapEffect_PSNormalPixelLightingTx)          },
     { NormalMapEffect_PSNormalPixelLightingTxNoFog,     sizeof(NormalMapEffect_PSNormalPixelLightingTxNoFog)     },
     { NormalMapEffect_PSNormalPixelLightingTxNoSpec,    sizeof(NormalMapEffect_PSNormalPixelLightingTxNoSpec)    },
-    { NormalMapEffect_PSNormalPixelLightingTxNoFogSpec, sizeof(NormalMapEffect_PSNormalPixelLightingTxNoFogSpec) },
+    { NormalMapEffect_PSNormalPixelLightingTxNoFogSpec, sizeof(NormalMapEffect_PSNormalPixelLightingTxNoFogSpec) }
 };
 
-
-template<>
-const int EffectBase<NormalMapEffectTraits>::PixelShaderIndices[] =
-{
-    0,      // pixel lighting + texture
+/*
+List
+0,      // pixel lighting + texture
     1,      // pixel lighting + texture, no fog
     0,      // pixel lighting + texture + vertex color
     1,      // pixel lighting + texture + vertex color, no fog
@@ -191,6 +207,26 @@ const int EffectBase<NormalMapEffectTraits>::PixelShaderIndices[] =
     3,     // pixel lighting (biased vertex normal) + texture, no fog or specular
     2,     // pixel lighting (biased vertex normal) + texture + vertex color, no specular
     3,     // pixel lighting (biased vertex normal) + texture + vertex color, no fog or specular
+ */
+template<>
+const int EffectBase<NormalMapEffectTraits>::PixelShaderIndices[] =
+{
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    3,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    3
 };
 
 // Global pool of per-device NormalMapEffect resources.

@@ -198,14 +198,12 @@ const D3D12_SHADER_BYTECODE EffectBase<BasicEffectTraits>::VertexShaderBytecode[
     { BasicEffect_VSBasicPixelLightingBn,      sizeof(BasicEffect_VSBasicPixelLightingBn)      },
     { BasicEffect_VSBasicPixelLightingVcBn,    sizeof(BasicEffect_VSBasicPixelLightingVcBn)    },
     { BasicEffect_VSBasicPixelLightingTxBn,    sizeof(BasicEffect_VSBasicPixelLightingTxBn)    },
-    { BasicEffect_VSBasicPixelLightingTxVcBn,  sizeof(BasicEffect_VSBasicPixelLightingTxVcBn)  },
+    { BasicEffect_VSBasicPixelLightingTxVcBn,  sizeof(BasicEffect_VSBasicPixelLightingTxVcBn)  }
 };
 
-
-template<>
-const int EffectBase<BasicEffectTraits>::VertexShaderIndices[] =
-{
-    0,      // basic
+/*
+List
+0,      // basic
     1,      // no fog
     2,      // vertex color
     3,      // vertex color, no fog
@@ -249,6 +247,50 @@ const int EffectBase<BasicEffectTraits>::VertexShaderIndices[] =
     22,     // pixel lighting (biased vertex normals) + texture, no fog
     23,     // pixel lighting (biased vertex normals) + texture + vertex color
     23,     // pixel lighting (biased vertex normals) + texture + vertex color, no fog
+    */
+template<>
+const int EffectBase<BasicEffectTraits>::VertexShaderIndices[] =
+{
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    8,
+    9,
+    9,
+    10,
+    10,
+    11,
+    11,
+    12,
+    12,
+    13,
+    13,
+    14,
+    14,
+    15,
+    15,
+    16,
+    16,
+    17,
+    17,
+    18,
+    18,
+    19,
+    19,
+    20,
+    20,
+    21,
+    21,
+    22,
+    22,
+    23,
+    23
 };
 
 
@@ -266,14 +308,11 @@ const D3D12_SHADER_BYTECODE EffectBase<BasicEffectTraits>::PixelShaderBytecode[]
     { BasicEffect_PSBasicVertexLightingTxNoFog, sizeof(BasicEffect_PSBasicVertexLightingTxNoFog) },
 
     { BasicEffect_PSBasicPixelLighting,         sizeof(BasicEffect_PSBasicPixelLighting)         },
-    { BasicEffect_PSBasicPixelLightingTx,       sizeof(BasicEffect_PSBasicPixelLightingTx)       },
+    { BasicEffect_PSBasicPixelLightingTx,       sizeof(BasicEffect_PSBasicPixelLightingTx)       }
 };
 
-
-template<>
-const int EffectBase<BasicEffectTraits>::PixelShaderIndices[] =
-{
-    0,      // basic
+/* List
+0,      // basic
     1,      // no fog
     0,      // vertex color
     1,      // vertex color, no fog
@@ -317,6 +356,50 @@ const int EffectBase<BasicEffectTraits>::PixelShaderIndices[] =
     9,      // pixel lighting (biased vertex normals) + texture, no fog
     9,      // pixel lighting (biased vertex normals) + texture + vertex color
     9,      // pixel lighting (biased vertex normals) + texture + vertex color, no fog
+    */
+template<>
+const int EffectBase<BasicEffectTraits>::PixelShaderIndices[] =
+{
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    3,
+    4,
+    5,
+    4,
+    5,
+    6,
+    7,
+    6,
+    7,
+    8,
+    8,
+    8,
+    8,
+    9,
+    9,
+    9,
+    9,
+    4,
+    5,
+    4,
+    5,
+    6,
+    7,
+    6,
+    7,
+    8,
+    8,
+    8,
+    8,
+    9,
+    9,
+    9,
+    9
 };
 
 // Global pool of per-device BasicEffect resources.

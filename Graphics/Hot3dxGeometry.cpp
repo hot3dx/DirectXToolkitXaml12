@@ -8,7 +8,7 @@
 #include "pch.h"
 #include "Hot3dxGeometry.h"
 #include <DirectXMath.h>
-//#include "..\App1\App1Main.h"
+
 ////////////////////////////////////////////////////////////////////////////
 // CHot3dxD3D12Geometry
 using namespace DirectX;

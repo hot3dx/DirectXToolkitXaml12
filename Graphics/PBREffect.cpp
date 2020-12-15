@@ -123,14 +123,12 @@ const D3D12_SHADER_BYTECODE EffectBase<PBREffectTraits>::VertexShaderBytecode[] 
     { PBREffect_VSConstant, sizeof(PBREffect_VSConstant) },
     { PBREffect_VSConstantVelocity, sizeof(PBREffect_VSConstantVelocity) },
     { PBREffect_VSConstantBn, sizeof(PBREffect_VSConstantBn) },
-    { PBREffect_VSConstantVelocityBn, sizeof(PBREffect_VSConstantVelocityBn) },
+    { PBREffect_VSConstantVelocityBn, sizeof(PBREffect_VSConstantVelocityBn) }
 };
 
-
-template<>
-const int EffectBase<PBREffectTraits>::VertexShaderIndices[] =
-{
-    0,      // constant
+/*
+List
+0,      // constant
     0,      // textured
     0,      // textured + emissive
     1,      // textured + velocity
@@ -141,6 +139,21 @@ const int EffectBase<PBREffectTraits>::VertexShaderIndices[] =
     2,      // textured + emissive (biased vertex normals)
     3,      // textured + velocity (biased vertex normals)
     3,      // textured + emissive + velocity (biasoed vertex normals)
+    */
+template<>
+const int EffectBase<PBREffectTraits>::VertexShaderIndices[] =
+{
+    0,
+    0,
+    0,
+    1,
+    1,
+
+    2,
+    2,
+    2,
+    3,
+    3
 };
 
 
@@ -154,11 +167,9 @@ const D3D12_SHADER_BYTECODE EffectBase<PBREffectTraits>::PixelShaderBytecode[] =
     { PBREffect_PSTexturedEmissiveVelocity, sizeof(PBREffect_PSTexturedEmissiveVelocity) }
 };
 
-
-template<>
-const int EffectBase<PBREffectTraits>::PixelShaderIndices[] =
-{
-    0,      // constant
+/*
+List
+ 0,      // constant
     1,      // textured
     2,      // textured + emissive
     3,      // textured + velocity
@@ -169,6 +180,20 @@ const int EffectBase<PBREffectTraits>::PixelShaderIndices[] =
     2,      // textured + emissive (biased vertex normals)
     3,      // textured + velocity (biased vertex normals)
     4,      // textured + emissive + velocity (biased vertex normals)
+    */
+template<>
+const int EffectBase<PBREffectTraits>::PixelShaderIndices[] =
+{
+    0,
+    1,
+    2,
+    3,
+    4,
+    0,
+    1,
+    2,
+    3,
+    4
 };
 
 // Global pool of per-device PBREffect resources. Required by EffectBase<>, but not used.
@@ -236,7 +261,7 @@ PBREffect::Impl::Impl(_In_ ID3D12Device* device,
             CD3DX12_DESCRIPTOR_RANGE(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 2),
             CD3DX12_DESCRIPTOR_RANGE(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 3),
             CD3DX12_DESCRIPTOR_RANGE(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 4),
-            CD3DX12_DESCRIPTOR_RANGE(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 5),
+            CD3DX12_DESCRIPTOR_RANGE(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 5)
         };
 
         CD3DX12_DESCRIPTOR_RANGE textureSampler[2] = {

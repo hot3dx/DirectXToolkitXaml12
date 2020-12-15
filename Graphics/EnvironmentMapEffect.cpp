@@ -136,14 +136,12 @@ const D3D12_SHADER_BYTECODE EffectBase<EnvironmentMapEffectTraits>::VertexShader
 
     { EnvironmentMapEffect_VSEnvMapBn,              sizeof(EnvironmentMapEffect_VSEnvMapBn)              },
     { EnvironmentMapEffect_VSEnvMapFresnelBn,       sizeof(EnvironmentMapEffect_VSEnvMapFresnelBn)       },
-    { EnvironmentMapEffect_VSEnvMapPixelLightingBn, sizeof(EnvironmentMapEffect_VSEnvMapPixelLightingBn) },
+    { EnvironmentMapEffect_VSEnvMapPixelLightingBn, sizeof(EnvironmentMapEffect_VSEnvMapPixelLightingBn) }
 };
 
-
-template<>
-const int EffectBase<EnvironmentMapEffectTraits>::VertexShaderIndices[] =
-{
-    0,      // basic
+/*
+List
+0,      // basic
     0,      // basic, no fog
     1,      // fresnel
     1,      // fresnel, no fog
@@ -170,6 +168,34 @@ const int EffectBase<EnvironmentMapEffectTraits>::VertexShaderIndices[] =
     5,      // pixel lighting (biased vertex normals), no fog
     5,      // pixel lighting (biased vertex normals), fresnel
     5,      // pixel lighting (biased vertex normals), fresnel, no fog
+    */
+template<>
+const int EffectBase<EnvironmentMapEffectTraits>::VertexShaderIndices[] =
+{
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    3,
+    3,
+    4,
+    4,
+    3,
+    3,
+    4,
+    4,
+    5,
+    5,
+    5,
+    5
 };
 
 
@@ -183,14 +209,11 @@ const D3D12_SHADER_BYTECODE EffectBase<EnvironmentMapEffectTraits>::PixelShaderB
     { EnvironmentMapEffect_PSEnvMapPixelLighting,             sizeof(EnvironmentMapEffect_PSEnvMapPixelLighting)             },
     { EnvironmentMapEffect_PSEnvMapPixelLightingNoFog,        sizeof(EnvironmentMapEffect_PSEnvMapPixelLightingNoFog)        },
     { EnvironmentMapEffect_PSEnvMapPixelLightingFresnel,      sizeof(EnvironmentMapEffect_PSEnvMapPixelLightingFresnel)      },
-    { EnvironmentMapEffect_PSEnvMapPixelLightingFresnelNoFog, sizeof(EnvironmentMapEffect_PSEnvMapPixelLightingFresnelNoFog) },
+    { EnvironmentMapEffect_PSEnvMapPixelLightingFresnelNoFog, sizeof(EnvironmentMapEffect_PSEnvMapPixelLightingFresnelNoFog) }
 };
 
-
-template<>
-const int EffectBase<EnvironmentMapEffectTraits>::PixelShaderIndices[] =
-{
-    0,      // basic
+/* List
+ 0,      // basic
     1,      // basic, no fog
     0,      // fresnel
     1,      // fresnel, no fog
@@ -217,6 +240,34 @@ const int EffectBase<EnvironmentMapEffectTraits>::PixelShaderIndices[] =
     5,      // per pixel lighting (biased vertex normals), no fog
     6,      // per pixel lighting (biased vertex normals), fresnel
     7,      // per pixel lighting (biased vertex normals), fresnel, no fog
+    */
+template<>
+const int EffectBase<EnvironmentMapEffectTraits>::PixelShaderIndices[] =
+{
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
 };
 
 

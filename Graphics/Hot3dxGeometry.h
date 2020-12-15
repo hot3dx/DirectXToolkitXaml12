@@ -9,10 +9,10 @@
 //--------------------------------------------------------------------------------------
 
 #include "pch.h"
-#include "..\Graphics\d3dx12.h"
+#include "Graphics\d3dx12.h"
 #include <d3d12.h>
 #include <DirectXMath.h>
-//#include "..\App1\App1Main.h"
+
 /////////////////////////////////////////////////////////////////////////////
 // Geometry window
 using namespace DirectX;
