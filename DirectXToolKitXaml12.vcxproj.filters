@@ -26,67 +26,13 @@
     <Filter Include="Src\Shaders\Compiled">
       <UniqueIdentifier>{5fdbfe2f-1762-4776-9074-90d2c13521e9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{5eecb79b-b612-49a0-9caa-3c085e757072}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DirectXToolKitXaml12.cpp" />
     <ClCompile Include="pch.cpp" />
-    <ClCompile Include="Audio\MediaReader.cpp">
-      <Filter>Audio</Filter>
-    </ClCompile>
-    <ClCompile Include="Audio\SoundEffect.cpp">
-      <Filter>Audio</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\AlphaTestEffect.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\BasicEffect.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\BasicPostProcess.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\CommonStates.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\DDSTextureLoader.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\DebugEffect.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\DescriptorHeap.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\DirectXHelpers.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\DualPostProcess.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\DualTextureEffect.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\EffectCommon.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\EffectFactory.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\EffectPipelineStateDescription.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\EffectTextureFactory.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\EnvironmentMapEffect.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\GeometricPrimitive.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\GraphicsMemory.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
     <ClCompile Include="Graphics\Hot3dx12Rotate.cpp">
       <Filter>Src</Filter>
     </ClCompile>
@@ -96,83 +42,137 @@
     <ClCompile Include="Graphics\Hot3dxGeometry.cpp">
       <Filter>Src</Filter>
     </ClCompile>
-    <ClCompile Include="Graphics\LinearAllocator.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\Model.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\ModelLoadSDKMESH.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\ModelLoadVBO.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\MyResourceUploadBatch.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\NormalMapEffect.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\PBREffect.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\PBREffectFactory.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\PrimitiveBatch.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\ScreenGrab.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\SkinnedEffect.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\SpriteBatch.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\SpriteFont.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\StereoProjection.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\ToneMapPostProcess.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\VertexTypes.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\WICTextureLoader.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\BinaryReader.cpp">
-      <Filter>Src\Shared</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\BinaryWriter.cpp">
-      <Filter>Src\Shared</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\Geometry.cpp">
-      <Filter>Src\Shared</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics\SimpleMath.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Audio\Audio.cpp">
+    <ClCompile Include="Audio\AudioFileReaderXaml12.cpp">
       <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio\AudioXaml12.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio\MediaReaderXaml12.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio\SoundEffectXaml12.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\BinaryWriterXaml12.cpp">
+      <Filter>Src\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\BinaryReaderXaml12.cpp">
+      <Filter>Src\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\GeometryXaml12.cpp">
+      <Filter>Src\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\WICTextureLoaderXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\VertexTypesXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\ToneMapPostProcessXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\StereoProjectionXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\SpriteFontXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\SpriteBatchXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\SkinnedEffectXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\SimpleMathXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\ScreenGrabXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\PrimitiveBatchXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\PBREffectFactoryXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\PBREffectXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\NormalMapEffectXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\MyResourceUploadBatchXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\ModelLoadVBOXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\ModelLoadSDKMESHXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\ModelXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\LinearAllocatorXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\GraphicsMemoryXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\GeometricPrimitiveXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\EnvironmentMapEffectXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\EffectTextureFactoryXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\EffectPipelineStateDescriptionXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\EffectFactoryXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\DualPostProcessXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\DualTextureEffectXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\EffectCommonXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\DirectXHelpersXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\DescriptorHeapXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\DebugEffectXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\DDSTextureLoaderXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\CommonStatesXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\AlphaTestEffectXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\BasicEffectXaml12.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\BasicPostProcessXaml12.cpp">
+      <Filter>Src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DirectXToolKitXaml12.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="Audio\Audio.h">
-      <Filter>Audio</Filter>
-    </ClInclude>
-    <ClInclude Include="Audio\MediaReader.h">
-      <Filter>Audio</Filter>
-    </ClInclude>
     <ClInclude Include="Graphics\GamePad.h">
       <Filter>Inc\Shared</Filter>
     </ClInclude>
@@ -181,60 +181,6 @@
     </ClInclude>
     <ClInclude Include="Graphics\Mouse.h">
       <Filter>Inc\Shared</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphics\CommonStates.h">
-      <Filter>Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphics\DDSTextureLoader.h">
-      <Filter>Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphics\DescriptorHeap.h">
-      <Filter>Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphics\DirectXHelpers.h">
-      <Filter>Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphics\EffectPipelineStateDescription.h">
-      <Filter>Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphics\Effects.h">
-      <Filter>Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphics\GeometricPrimitive.h">
-      <Filter>Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphics\GraphicsMemory.h">
-      <Filter>Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphics\Model.h">
-      <Filter>Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphics\MyResourceUploadBatch.h">
-      <Filter>Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphics\PostProcess.h">
-      <Filter>Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphics\PrimitiveBatch.h">
-      <Filter>Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphics\RenderTargetState.h">
-      <Filter>Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphics\ScreenGrab.h">
-      <Filter>Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphics\SpriteBatch.h">
-      <Filter>Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphics\SpriteFont.h">
-      <Filter>Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphics\VertexTypes.h">
-      <Filter>Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphics\WICTextureLoader.h">
-      <Filter>Inc</Filter>
     </ClInclude>
     <ClInclude Include="Graphics\Hot3dx12Defines.h">
       <Filter>Inc</Filter>
@@ -251,53 +197,119 @@
     <ClInclude Include="Graphics\d3dx12.h">
       <Filter>Src</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics\EffectCommon.h">
-      <Filter>Src</Filter>
+    <ClInclude Include="Audio\AudioFileReaderXaml12.h">
+      <Filter>Audio</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics\LinearAllocator.h">
-      <Filter>Src</Filter>
+    <ClInclude Include="Audio\AudioXaml12.h">
+      <Filter>Audio</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics\AlignedNew.h">
+    <ClInclude Include="Audio\MediaReaderXaml12.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Audio\SoundEffectXaml12.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Audio\XAudio2HelpersXaml12.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\AlignedNewXaml12.h">
       <Filter>Src\Shared</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics\Bezier.h">
+    <ClInclude Include="Graphics\BezierXaml12.h">
       <Filter>Src\Shared</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics\BinaryReader.h">
+    <ClInclude Include="Graphics\BinaryReaderXaml12.h">
       <Filter>Src\Shared</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics\BinaryWriter.h">
+    <ClInclude Include="Graphics\BinaryWriterXaml12.h">
       <Filter>Src\Shared</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics\DDS.h">
+    <ClInclude Include="Graphics\DDSXaml12.h">
       <Filter>Src\Shared</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics\DemandCreate.h">
+    <ClInclude Include="Graphics\DemandCreateXaml12.h">
       <Filter>Src\Shared</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics\Geometry.h">
+    <ClInclude Include="Graphics\GeometryXaml12.h">
       <Filter>Src\Shared</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics\LoaderHelpers.h">
+    <ClInclude Include="Graphics\LoaderHelpersXaml12.h">
       <Filter>Src\Shared</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics\PlatformHelpers.h">
+    <ClInclude Include="Graphics\PlatformHelpersXaml12.h">
       <Filter>Src\Shared</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics\SDKMesh.h">
+    <ClInclude Include="Graphics\SDKMeshXaml12.h">
       <Filter>Src\Shared</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics\SharedResourcePool.h">
+    <ClInclude Include="Graphics\SharedResourcePoolXaml12.h">
       <Filter>Src\Shared</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics\vbo.h">
+    <ClInclude Include="Graphics\vboXaml12.h">
       <Filter>Src\Shared</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics\SimpleMath.h">
+    <ClInclude Include="Graphics\CommonStatesXaml12.h">
       <Filter>Inc</Filter>
     </ClInclude>
-    <ClInclude Include="Audio\SoundEffect.h">
-      <Filter>Audio</Filter>
+    <ClInclude Include="Graphics\DDSTextureLoaderXaml12.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\DescriptorHeapXaml12.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\DirectXHelpersXaml12.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\WICTextureLoaderXaml12.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\VertexTypesXaml12.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\SpriteFontXaml12.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\SpriteBatchXaml12.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\SimpleMathXaml12.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\ScreenGrabXaml12.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\RenderTargetStateXaml12.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\PrimitiveBatchXaml12.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\PostProcessXaml12.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\MyResourceUploadBatchXaml12.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\ModelXaml12.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\GraphicsMemoryXaml12.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\GeometricPrimitiveXaml12.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\EffectsXaml12.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\EffectPipelineStateDescriptionXaml12.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\LinearAllocatorXaml12.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\EffectCommonXaml12.h">
+      <Filter>Src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -305,9 +317,6 @@
       <Filter>Src\Shared</Filter>
     </None>
     <None Include="packages.config" />
-    <None Include="Graphics\SimpleMath.inl">
-      <Filter>Inc</Filter>
-    </None>
     <None Include="Graphics\Shaders\Common.fxh">
       <Filter>Src\Shaders</Filter>
     </None>
@@ -1148,5 +1157,8 @@
     <None Include="Graphics\Shaders\SkinnedEffect.fx" />
     <None Include="Graphics\Shaders\SpriteEffect.fx" />
     <None Include="Graphics\Shaders\ToneMap.fx" />
+    <None Include="Graphics\SimpleMathXaml12.inl">
+      <Filter>Inc</Filter>
+    </None>
   </ItemGroup>
 </Project>
