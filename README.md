@@ -4,6 +4,10 @@
 
 ![App1 Example Screenshot](https://github.com/hot3dx/DirectXToolkitXaml12/blob/master/Assets/App1-DirectXToolKitXaml12-Sample-App.png)
 
+#All files renamed ...Xaml12 so as not to conflict with the DirectXTK12 of Chuck Walburn
+#12/31/2020 
+#Happy New Year's present 
+
 The Front Code of AppXamlDX12 other than that in the Graphics folder
 can easily be used to create a DirectX 12 Xaml UWP App because this 
 library contains all the files in that directory.
@@ -13,10 +17,11 @@ library contains all the files in that directory.
 # Use C:\DirectXToolKitXaml12
 for zero problems with App1 sample
 
-Windows 10 OS Build 2004
-Visual Studio C++ 16.6.5
+Windows 10 OS Build 20H2
+Visual Studio C++ 16.8.3
 18362
 C++ 17
+C - 17
 build tools 142
 
 -- To see the features you must download the 
@@ -24,8 +29,9 @@ build tools 142
 -- download and build this project library
 
 For x86 - Win32, x64 Debug and Release
-Yes they actually work as of 08/18/20
+Yes they actually work as of 12/30/2020
 
+App1 upgrade up soon!
 1) Start 3D by click app bottom bar thre dots ... lower right
 2) Click "Start" Button on AppBottomBar
 
