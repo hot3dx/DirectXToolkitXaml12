@@ -46,11 +46,7 @@ were removed 8/18/20 replaced with DirectXPage.xaml.h and .cpp code
 
 # Bitcoin Donations Accepted!
 
-BTC 33DN8TgAe879tDkhsCEpneoVrydHbasuLm
-
-BCHABC qruhxl8y2753fg0qfx7t8zfqzw92rvaxussk7fcnke
-
-LTC MEQVCCxa5ZZkmGqAfYfRvipNcY4BaTRrFm
+BTC 32HVJHEXh9bMLVkmoSE1d389q2Q1YvfrNE
 
 By: Jeff Kubitz
 ![Ico](https://github.com/hot3dx/AppXamlDX12/blob/master/Assets/AutoDraw2.ico)
