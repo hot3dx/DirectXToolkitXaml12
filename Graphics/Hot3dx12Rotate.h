@@ -6,9 +6,6 @@
 // DirectX 12 C++ Move and Rotation Functions
 //--------------------------------------------------------------------------------------
 #pragma once
-//#include "../App1/Content/ShaderStructures.h"
-//#include "..\App1\App1Main.h"
-//#include "../../App1/Content/ShaderStructures.h"
 
 namespace Hot3dx
 {
