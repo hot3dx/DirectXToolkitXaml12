@@ -8,7 +8,7 @@
 
 #include "pch.h"
 #include "Hot3dxCamera.h"
-#include "StereoProjection.h"
+#include "StereoProjectionXaml12.h"
 
 using namespace DirectX;
 

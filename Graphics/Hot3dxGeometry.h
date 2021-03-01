@@ -9,24 +9,24 @@
 //--------------------------------------------------------------------------------------
 
 #include "pch.h"
-#include "..\Graphics\d3dx12.h"
+#include "Graphics\d3dx12.h"
 #include <d3d12.h>
 #include <DirectXMath.h>
-//#include "..\App1\App1Main.h"
+
 /////////////////////////////////////////////////////////////////////////////
 // Geometry window
 using namespace DirectX;
 
 namespace Hot3dx
 {
-	class CHot3dxD3D12Geometry
-	{
-		// Construction
-	public:
-		CHot3dxD3D12Geometry();
 
-		// XMFLOAT3 Operations
+	ref class CHot3dxD3D12Geometry
+	{
 	public:
+
+	internal:CHot3dxD3D12Geometry();
+	
+		// XMFLOAT3 Operations
 		double XM_CALLCONV distanceBetweenPoints(XMFLOAT3 v, XMFLOAT3 pos);
 		XMFLOAT3 XM_CALLCONV directionBetweenPoints(XMFLOAT3 _from, XMFLOAT3 _to);
 		//XMFLOAT3 CenterOfFace(CD3D9Face face);
@@ -48,15 +48,7 @@ namespace Hot3dx
 		double XM_CALLCONV FindPlaneConstantVec(XMVECTOR planeNormal, XMVECTOR a);
 		XMVECTOR XM_CALLCONV FindPointIntersectPlaneVec(XMVECTOR planeNormal, XMVECTOR lineOrigin, XMVECTOR lineDirection, float c);
 		
-		// Attributes
-	public:
-
-	
-	public:
-		//virtual ~CHot3dxD3D12Geometry();
-
-
-	protected:
+	private:
 
 	};
 }
