@@ -15,8 +15,12 @@
 
 #pragma once
 
+#if defined(_XBOX_ONE) && defined(_TITLE)
 #include "Graphics\d3dx12.h"
+#else
 #include <d3d12.h>
+#endif
+
 #include <memory>
 #include <vector>
 #include <stdint.h>

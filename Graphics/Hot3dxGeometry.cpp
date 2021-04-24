@@ -18,8 +18,6 @@ Hot3dx::CHot3dxD3D12Geometry::CHot3dxD3D12Geometry()
 {
 }
 
-
-
 double XM_CALLCONV Hot3dx::CHot3dxD3D12Geometry::distanceBetweenPoints(XMFLOAT3 v, XMFLOAT3 pos)
 {
 	return sqrt((pow((v.x - pos.x), 2.0)) + (pow((v.y - pos.y), 2.0)) + (pow((v.z - pos.x), 2.0)));

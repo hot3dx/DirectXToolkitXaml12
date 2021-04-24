@@ -32,7 +32,7 @@ namespace DirectX
         using VertexType = VertexPositionNormalTexture;
 
         // Factory methods.
-        static std::unique_ptr<GeometricPrimitive> __cdecl CreateCube(float size = 1, bool rhcoords = true, _In_opt_ ID3D12Device* device = nullptr);
+        static std::unique_ptr<GeometricPrimitive> __cdecl CreateRectangleOrSquare(float size, bool rhcoords, ID3D12Device* device); static std::unique_ptr<GeometricPrimitive> __cdecl CreateCube(float size = 1, bool rhcoords = true, _In_opt_ ID3D12Device* device = nullptr);
         static std::unique_ptr<GeometricPrimitive> __cdecl CreateBox(const XMFLOAT3& size, bool rhcoords = true, bool invertn = false, _In_opt_ ID3D12Device* device = nullptr);
         static std::unique_ptr<GeometricPrimitive> __cdecl CreateSphere(float diameter = 1, size_t tessellation = 16, bool rhcoords = true, bool invertn = false, _In_opt_ ID3D12Device* device = nullptr);
         static std::unique_ptr<GeometricPrimitive> __cdecl CreateGeoSphere(float diameter = 1, size_t tessellation = 3, bool rhcoords = true, _In_opt_ ID3D12Device* device = nullptr);
@@ -46,6 +46,7 @@ namespace DirectX
         static std::unique_ptr<GeometricPrimitive> __cdecl CreateTeapot(float size = 1, size_t tessellation = 8, bool rhcoords = true, _In_opt_ ID3D12Device* device = nullptr);
         static std::unique_ptr<GeometricPrimitive> __cdecl CreateCustom(const std::vector<VertexType>& vertices, const std::vector<uint16_t>& indices, _In_opt_ ID3D12Device* device = nullptr);
 
+        static void __cdecl CreateRectangleOrSquare(std::vector<VertexType>& vertices, std::vector<uint16_t>& indices, float size, bool rhcoords);
         static void __cdecl CreateCube(std::vector<VertexType>& vertices, std::vector<uint16_t>& indices, float size = 1, bool rhcoords = true);
         static void __cdecl CreateBox(std::vector<VertexType>& vertices, std::vector<uint16_t>& indices, const XMFLOAT3& size, bool rhcoords = true, bool invertn = false);
         static void __cdecl CreateSphere(std::vector<VertexType>& vertices, std::vector<uint16_t>& indices, float diameter = 1, size_t tessellation = 16, bool rhcoords = true, bool invertn = false);
@@ -65,6 +66,7 @@ namespace DirectX
         // Draw the primitive.
         void __cdecl Draw(_In_ ID3D12GraphicsCommandList* commandList) const;
 
+               
     private:
         GeometricPrimitive() noexcept(false);
 

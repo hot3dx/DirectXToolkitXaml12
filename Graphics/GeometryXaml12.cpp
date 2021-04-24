@@ -64,6 +64,77 @@ namespace
     }
 }
 
+void DirectX::ComputeRectangleOrSquare(VertexCollection& vertices, IndexCollection& indices, const XMFLOAT3& size, bool rhcoords, bool invertn)
+{
+    vertices.clear();
+    indices.clear();
+
+    // A box has six faces, each one pointing in a different direction.
+    const int FaceCount = 6;
+
+    static const XMVECTORF32 faceNormals[FaceCount] =
+    {
+        { { {  0,  0,  1, 0 } } },
+        { { {  0,  0, -1, 0 } } },
+        { { {  1,  0,  0, 0 } } },
+        { { { -1,  0,  0, 0 } } },
+        { { {  0,  1,  0, 0 } } },
+        { { {  0, -1,  0, 0 } } }
+    };
+
+    static const XMVECTORF32 textureCoordinates[4] =
+    {
+        { { { 1, 0, 0, 0 } } },
+        { { { 1, 1, 0, 0 } } },
+        { { { 0, 1, 0, 0 } } },
+        { { { 0, 0, 0, 0 } } }
+    };
+
+    XMVECTOR tsize = XMLoadFloat3(&size);
+    tsize = XMVectorDivide(tsize, g_XMTwo);
+
+    // Create each face in turn.
+    for (int i = 0; i < 1; i++)
+    {
+        XMVECTOR normal = faceNormals[i];
+
+        // Get two vectors perpendicular both to the face normal and to each other.
+        XMVECTOR basis = (i >= 4) ? g_XMIdentityR2 : g_XMIdentityR1;
+
+        XMVECTOR side1 = XMVector3Cross(normal, basis);
+        XMVECTOR side2 = XMVector3Cross(normal, side1);
+
+        // Six indices (two triangles) per face.
+        size_t vbase = vertices.size();
+        index_push_back(indices, vbase + 0);
+        index_push_back(indices, vbase + 1);
+        index_push_back(indices, vbase + 2);
+
+        index_push_back(indices, vbase + 0);
+        index_push_back(indices, vbase + 2);
+        index_push_back(indices, vbase + 3);
+
+        // Four vertices per face.
+        // (normal - side1 - side2) * tsize // normal // t0
+        vertices.push_back(VertexPositionNormalTexture(XMVectorMultiply(XMVectorSubtract(XMVectorSubtract(normal, side1), side2), tsize), normal, textureCoordinates[0]));
+
+        // (normal - side1 + side2) * tsize // normal // t1
+        vertices.push_back(VertexPositionNormalTexture(XMVectorMultiply(XMVectorAdd(XMVectorSubtract(normal, side1), side2), tsize), normal, textureCoordinates[1]));
+
+        // (normal + side1 + side2) * tsize // normal // t2
+        vertices.push_back(VertexPositionNormalTexture(XMVectorMultiply(XMVectorAdd(normal, XMVectorAdd(side1, side2)), tsize), normal, textureCoordinates[2]));
+
+        // (normal + side1 - side2) * tsize // normal // t3
+        vertices.push_back(VertexPositionNormalTexture(XMVectorMultiply(XMVectorSubtract(XMVectorAdd(normal, side1), side2), tsize), normal, textureCoordinates[3]));
+    }
+
+    // Build RH above
+    if (!rhcoords)
+        ReverseWinding(indices, vertices);
+
+    if (invertn)
+        InvertNormals(vertices);
+}
 
 //--------------------------------------------------------------------------------------
 // Cube (aka a Hexahedron) or Box

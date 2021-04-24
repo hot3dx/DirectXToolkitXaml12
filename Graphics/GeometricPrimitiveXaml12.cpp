@@ -208,6 +208,33 @@ void GeometricPrimitive::Draw(ID3D12GraphicsCommandList* commandList) const
 // Cube (aka a Hexahedron) or Box
 //--------------------------------------------------------------------------------------
 
+// Creates a RectangleOrSquare primitive.
+std::unique_ptr<GeometricPrimitive> GeometricPrimitive::CreateRectangleOrSquare(
+    float size,
+    bool rhcoords,
+    _In_opt_ ID3D12Device* device)
+{
+    VertexCollection vertices;
+    IndexCollection indices;
+    ComputeRectangleOrSquare(vertices, indices, XMFLOAT3(size, size, size), rhcoords, false);
+
+    // Create the primitive object.
+    std::unique_ptr<GeometricPrimitive> primitive(new GeometricPrimitive());
+
+    primitive->pImpl->Initialize(vertices, indices, device);
+
+    return primitive;
+}
+
+void GeometricPrimitive::CreateRectangleOrSquare(
+    std::vector<VertexType>& vertices,
+    std::vector<uint16_t>& indices,
+    float size,
+    bool rhcoords)
+{
+    ComputeRectangleOrSquare(vertices, indices, XMFLOAT3(size, size, size), rhcoords, false);
+}
+
 // Creates a cube primitive.
 std::unique_ptr<GeometricPrimitive> GeometricPrimitive::CreateCube(
     float size,
