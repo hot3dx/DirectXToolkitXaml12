@@ -35,7 +35,7 @@
     <AppContainerApplication>true</AppContainerApplication>
     <ApplicationType>Windows Store</ApplicationType>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <WindowsTargetPlatformMinVersion>10.0.18362.0</WindowsTargetPlatformMinVersion>
+    <WindowsTargetPlatformMinVersion>10.0.19041.0</WindowsTargetPlatformMinVersion>
     <ApplicationTypeRevision>10.0</ApplicationTypeRevision>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -313,106 +313,106 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Audio\Audio.h" />
-    <ClInclude Include="Audio\AudioFileReader.h" />
-    <ClInclude Include="Audio\MediaReader.h" />
-    <ClInclude Include="Audio\SoundEffect.h" />
-    <ClInclude Include="Audio\XAudio2Helpers.h" />
+    <ClInclude Include="Audio\AudioFileReaderXaml12.h" />
+    <ClInclude Include="Audio\AudioXaml12.h" />
+    <ClInclude Include="Audio\MediaReaderXaml12.h" />
+    <ClInclude Include="Audio\SoundEffectXaml12.h" />
+    <ClInclude Include="Audio\XAudio2HelpersXaml12.h" />
     <ClInclude Include="DirectXToolKitXaml12.h" />
-    <ClInclude Include="Graphics\AlignedNew.h" />
-    <ClInclude Include="Graphics\Bezier.h" />
-    <ClInclude Include="Graphics\BinaryReader.h" />
-    <ClInclude Include="Graphics\BinaryWriter.h" />
-    <ClInclude Include="Graphics\CommonStates.h" />
+    <ClInclude Include="Graphics\AlignedNewXaml12.h" />
+    <ClInclude Include="Graphics\BezierXaml12.h" />
+    <ClInclude Include="Graphics\BinaryReaderXaml12.h" />
+    <ClInclude Include="Graphics\BinaryWriterXaml12.h" />
+    <ClInclude Include="Graphics\CommonStatesXaml12.h" />
     <ClInclude Include="Graphics\d3dx12.h" />
-    <ClInclude Include="Graphics\DDS.h" />
-    <ClInclude Include="Graphics\DDSTextureLoader.h" />
-    <ClInclude Include="Graphics\DemandCreate.h" />
-    <ClInclude Include="Graphics\DescriptorHeap.h" />
-    <ClInclude Include="Graphics\DirectXHelpers.h" />
-    <ClInclude Include="Graphics\EffectCommon.h" />
-    <ClInclude Include="Graphics\EffectPipelineStateDescription.h" />
-    <ClInclude Include="Graphics\Effects.h" />
+    <ClInclude Include="Graphics\DDSTextureLoaderXaml12.h" />
+    <ClInclude Include="Graphics\DDSXaml12.h" />
+    <ClInclude Include="Graphics\DemandCreateXaml12.h" />
+    <ClInclude Include="Graphics\DescriptorHeapXaml12.h" />
+    <ClInclude Include="Graphics\DirectXHelpersXaml12.h" />
+    <ClInclude Include="Graphics\EffectCommonXaml12.h" />
+    <ClInclude Include="Graphics\EffectPipelineStateDescriptionXaml12.h" />
+    <ClInclude Include="Graphics\EffectsXaml12.h" />
     <ClInclude Include="Graphics\GamePad.h" />
-    <ClInclude Include="Graphics\GeometricPrimitive.h" />
-    <ClInclude Include="Graphics\Geometry.h" />
-    <ClInclude Include="Graphics\GraphicsMemory.h" />
+    <ClInclude Include="Graphics\GeometricPrimitiveXaml12.h" />
+    <ClInclude Include="Graphics\GeometryXaml12.h" />
+    <ClInclude Include="Graphics\GraphicsMemoryXaml12.h" />
     <ClInclude Include="Graphics\Hot3dx12Defines.h" />
     <ClInclude Include="Graphics\Hot3dx12Rotate.h" />
     <ClInclude Include="Graphics\Hot3dxCamera.h" />
     <ClInclude Include="Graphics\Hot3dxGeometry.h" />
     <ClInclude Include="Graphics\Keyboard.h" />
-    <ClInclude Include="Graphics\LinearAllocator.h" />
-    <ClInclude Include="Graphics\LoaderHelpers.h" />
-    <ClInclude Include="Graphics\Model.h" />
+    <ClInclude Include="Graphics\LinearAllocatorXaml12.h" />
+    <ClInclude Include="Graphics\LoaderHelpersXaml12.h" />
+    <ClInclude Include="Graphics\ModelXaml12.h" />
     <ClInclude Include="Graphics\Mouse.h" />
-    <ClInclude Include="Graphics\MyResourceUploadBatch.h" />
-    <ClInclude Include="Graphics\PlatformHelpers.h" />
-    <ClInclude Include="Graphics\PostProcess.h" />
-    <ClInclude Include="Graphics\PrimitiveBatch.h" />
-    <ClInclude Include="Graphics\RenderTargetState.h" />
-    <ClInclude Include="Graphics\ScreenGrab.h" />
-    <ClInclude Include="Graphics\SDKMesh.h" />
-    <ClInclude Include="Graphics\SharedResourcePool.h" />
-    <ClInclude Include="Graphics\SimpleMath.h" />
-    <ClInclude Include="Graphics\SpriteBatch.h" />
-    <ClInclude Include="Graphics\SpriteFont.h" />
-    <ClInclude Include="Graphics\vbo.h" />
-    <ClInclude Include="Graphics\VertexTypes.h" />
-    <ClInclude Include="Graphics\WICTextureLoader.h" />
+    <ClInclude Include="Graphics\MyResourceUploadBatchXaml12.h" />
+    <ClInclude Include="Graphics\PlatformHelpersXaml12.h" />
+    <ClInclude Include="Graphics\PostProcessXaml12.h" />
+    <ClInclude Include="Graphics\PrimitiveBatchXaml12.h" />
+    <ClInclude Include="Graphics\RenderTargetStateXaml12.h" />
+    <ClInclude Include="Graphics\ScreenGrabXaml12.h" />
+    <ClInclude Include="Graphics\SDKMeshXaml12.h" />
+    <ClInclude Include="Graphics\SharedResourcePoolXaml12.h" />
+    <ClInclude Include="Graphics\SimpleMathXaml12.h" />
+    <ClInclude Include="Graphics\SpriteBatchXaml12.h" />
+    <ClInclude Include="Graphics\SpriteFontXaml12.h" />
+    <ClInclude Include="Graphics\vboXaml12.h" />
+    <ClInclude Include="Graphics\VertexTypesXaml12.h" />
+    <ClInclude Include="Graphics\WICTextureLoaderXaml12.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Audio\Audio.cpp" />
-    <ClCompile Include="Audio\AudioFileReader.cpp" />
-    <ClCompile Include="Audio\MediaReader.cpp" />
-    <ClCompile Include="Audio\SoundEffect.cpp" />
+    <ClCompile Include="Audio\AudioFileReaderXaml12.cpp" />
+    <ClCompile Include="Audio\AudioXaml12.cpp" />
+    <ClCompile Include="Audio\MediaReaderXaml12.cpp" />
+    <ClCompile Include="Audio\SoundEffectXaml12.cpp" />
     <ClCompile Include="DirectXToolKitXaml12.cpp">
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/bigobj %(AdditionalOptions)</AdditionalOptions>
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">/bigobj %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
-    <ClCompile Include="Graphics\AlphaTestEffect.cpp" />
-    <ClCompile Include="Graphics\BasicEffect.cpp" />
-    <ClCompile Include="Graphics\BasicPostProcess.cpp" />
-    <ClCompile Include="Graphics\BinaryReader.cpp" />
-    <ClCompile Include="Graphics\BinaryWriter.cpp" />
-    <ClCompile Include="Graphics\CommonStates.cpp" />
-    <ClCompile Include="Graphics\DDSTextureLoader.cpp" />
-    <ClCompile Include="Graphics\DebugEffect.cpp" />
-    <ClCompile Include="Graphics\DescriptorHeap.cpp" />
-    <ClCompile Include="Graphics\DirectXHelpers.cpp" />
-    <ClCompile Include="Graphics\DualPostProcess.cpp" />
-    <ClCompile Include="Graphics\DualTextureEffect.cpp" />
-    <ClCompile Include="Graphics\EffectCommon.cpp" />
-    <ClCompile Include="Graphics\EffectFactory.cpp" />
-    <ClCompile Include="Graphics\EffectPipelineStateDescription.cpp" />
-    <ClCompile Include="Graphics\EffectTextureFactory.cpp" />
-    <ClCompile Include="Graphics\EnvironmentMapEffect.cpp" />
-    <ClCompile Include="Graphics\GeometricPrimitive.cpp" />
-    <ClCompile Include="Graphics\Geometry.cpp" />
-    <ClCompile Include="Graphics\GraphicsMemory.cpp" />
+    <ClCompile Include="Graphics\AlphaTestEffectXaml12.cpp" />
+    <ClCompile Include="Graphics\BasicEffectXaml12.cpp" />
+    <ClCompile Include="Graphics\BasicPostProcessXaml12.cpp" />
+    <ClCompile Include="Graphics\BinaryReaderXaml12.cpp" />
+    <ClCompile Include="Graphics\BinaryWriterXaml12.cpp" />
+    <ClCompile Include="Graphics\CommonStatesXaml12.cpp" />
+    <ClCompile Include="Graphics\DDSTextureLoaderXaml12.cpp" />
+    <ClCompile Include="Graphics\DebugEffectXaml12.cpp" />
+    <ClCompile Include="Graphics\DescriptorHeapXaml12.cpp" />
+    <ClCompile Include="Graphics\DirectXHelpersXaml12.cpp" />
+    <ClCompile Include="Graphics\DualPostProcessXaml12.cpp" />
+    <ClCompile Include="Graphics\DualTextureEffectXaml12.cpp" />
+    <ClCompile Include="Graphics\EffectCommonXaml12.cpp" />
+    <ClCompile Include="Graphics\EffectFactoryXaml12.cpp" />
+    <ClCompile Include="Graphics\EffectPipelineStateDescriptionXaml12.cpp" />
+    <ClCompile Include="Graphics\EffectTextureFactoryXaml12.cpp" />
+    <ClCompile Include="Graphics\EnvironmentMapEffectXaml12.cpp" />
+    <ClCompile Include="Graphics\GeometricPrimitiveXaml12.cpp" />
+    <ClCompile Include="Graphics\GeometryXaml12.cpp" />
+    <ClCompile Include="Graphics\GraphicsMemoryXaml12.cpp" />
     <ClCompile Include="Graphics\Hot3dx12Rotate.cpp" />
     <ClCompile Include="Graphics\Hot3dxCamera.cpp" />
     <ClCompile Include="Graphics\Hot3dxGeometry.cpp" />
-    <ClCompile Include="Graphics\LinearAllocator.cpp" />
-    <ClCompile Include="Graphics\Model.cpp" />
-    <ClCompile Include="Graphics\ModelLoadSDKMESH.cpp" />
-    <ClCompile Include="Graphics\ModelLoadVBO.cpp" />
-    <ClCompile Include="Graphics\MyResourceUploadBatch.cpp" />
-    <ClCompile Include="Graphics\NormalMapEffect.cpp" />
-    <ClCompile Include="Graphics\PBREffect.cpp" />
-    <ClCompile Include="Graphics\PBREffectFactory.cpp" />
-    <ClCompile Include="Graphics\PrimitiveBatch.cpp" />
-    <ClCompile Include="Graphics\ScreenGrab.cpp" />
-    <ClCompile Include="Graphics\SimpleMath.cpp" />
-    <ClCompile Include="Graphics\SkinnedEffect.cpp" />
-    <ClCompile Include="Graphics\SpriteBatch.cpp" />
-    <ClCompile Include="Graphics\SpriteFont.cpp" />
-    <ClCompile Include="Graphics\StereoProjection.cpp" />
-    <ClCompile Include="Graphics\ToneMapPostProcess.cpp" />
-    <ClCompile Include="Graphics\VertexTypes.cpp" />
-    <ClCompile Include="Graphics\WICTextureLoader.cpp" />
+    <ClCompile Include="Graphics\LinearAllocatorXaml12.cpp" />
+    <ClCompile Include="Graphics\ModelLoadSDKMESHXaml12.cpp" />
+    <ClCompile Include="Graphics\ModelLoadVBOXaml12.cpp" />
+    <ClCompile Include="Graphics\ModelXaml12.cpp" />
+    <ClCompile Include="Graphics\MyResourceUploadBatchXaml12.cpp" />
+    <ClCompile Include="Graphics\NormalMapEffectXaml12.cpp" />
+    <ClCompile Include="Graphics\PBREffectFactoryXaml12.cpp" />
+    <ClCompile Include="Graphics\PBREffectXaml12.cpp" />
+    <ClCompile Include="Graphics\PrimitiveBatchXaml12.cpp" />
+    <ClCompile Include="Graphics\ScreenGrabXaml12.cpp" />
+    <ClCompile Include="Graphics\SimpleMathXaml12.cpp" />
+    <ClCompile Include="Graphics\SkinnedEffectXaml12.cpp" />
+    <ClCompile Include="Graphics\SpriteBatchXaml12.cpp" />
+    <ClCompile Include="Graphics\SpriteFontXaml12.cpp" />
+    <ClCompile Include="Graphics\StereoProjectionXaml12.cpp" />
+    <ClCompile Include="Graphics\ToneMapPostProcessXaml12.cpp" />
+    <ClCompile Include="Graphics\VertexTypesXaml12.cpp" />
+    <ClCompile Include="Graphics\WICTextureLoaderXaml12.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -701,7 +701,7 @@
     <None Include="Graphics\Shaders\RootSig.fxh" />
     <None Include="Graphics\Shaders\Structures.fxh" />
     <None Include="Graphics\Shaders\Utilities.fxh" />
-    <None Include="Graphics\SimpleMath.inl" />
+    <None Include="Graphics\SimpleMathXaml12.inl" />
     <None Include="Graphics\TeapotData.inc" />
     <None Include="packages.config" />
   </ItemGroup>
