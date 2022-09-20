@@ -21,6 +21,7 @@
 using namespace std;
 
 using namespace DirectX;
+using namespace DirectX::DXTKXAML12;
 using Microsoft::WRL::ComPtr;
 
 
@@ -52,9 +53,9 @@ public:
         uint32_t width, uint32_t height,
         DXGI_FORMAT format,
         uint32_t stride, uint32_t rows,
-        _In_reads_(stride * rows) const uint8_t* data);
+        _In_reads_(stride* rows) const uint8_t* data);
 
-    const wchar_t* ConvertUTF8(_In_z_ const char *text);
+    const wchar_t* ConvertUTF8(_In_z_ const char* text);
 
     // Fields.
     ComPtr<ID3D12Resource> textureResource;
@@ -224,36 +225,36 @@ void SpriteFont::Impl::ForEachGlyph(_In_z_ wchar_t const* text, TAction action) 
 
         switch (character)
         {
-            case '\r':
-                // Skip carriage returns.
-                continue;
+        case '\r':
+            // Skip carriage returns.
+            continue;
 
-            case '\n':
-                // New line.
+        case '\n':
+            // New line.
+            x = 0;
+            y += lineSpacing;
+            break;
+
+        default:
+            // Output this character.
+            auto glyph = FindGlyph(character);
+
+            x += glyph->XOffset;
+
+            if (x < 0)
                 x = 0;
-                y += lineSpacing;
-                break;
 
-            default:
-                // Output this character.
-                auto glyph = FindGlyph(character);
+            float advance = glyph->Subrect.right - glyph->Subrect.left + glyph->XAdvance;
 
-                x += glyph->XOffset;
+            if (!iswspace(character)
+                || ((glyph->Subrect.right - glyph->Subrect.left) > 1)
+                || ((glyph->Subrect.bottom - glyph->Subrect.top) > 1))
+            {
+                action(glyph, x, y, advance);
+            }
 
-                if (x < 0)
-                    x = 0;
-
-                float advance = glyph->Subrect.right - glyph->Subrect.left + glyph->XAdvance;
-
-                if (!iswspace(character)
-                    || ((glyph->Subrect.right - glyph->Subrect.left) > 1)
-                    || ((glyph->Subrect.bottom - glyph->Subrect.top) > 1))
-                {
-                    action(glyph, x, y, advance);
-                }
-
-                x += advance;
-                break;
+            x += advance;
+            break;
         }
     }
 }
@@ -309,7 +310,7 @@ void SpriteFont::Impl::CreateTextureResource(
 }
 
 
-const wchar_t* SpriteFont::Impl::ConvertUTF8(_In_z_ const char *text)
+const wchar_t* SpriteFont::Impl::ConvertUTF8(_In_z_ const char* text)
 {
     if (!utfBuffer)
     {
@@ -410,7 +411,7 @@ void XM_CALLCONV SpriteFont::DrawString(_In_ SpriteBatch* spriteBatch, _In_z_ wc
 void XM_CALLCONV SpriteFont::DrawString(_In_ SpriteBatch* spriteBatch, _In_z_ wchar_t const* text, FXMVECTOR position, FXMVECTOR color, float rotation, FXMVECTOR origin, GXMVECTOR scale, SpriteEffects effects, float layerDepth) const
 {
     static_assert(SpriteEffects_FlipHorizontally == 1 &&
-                  SpriteEffects_FlipVertically == 2, "If you change these enum values, the following tables must be updated to match");
+        SpriteEffects_FlipVertically == 2, "If you change these enum values, the following tables must be updated to match");
 
     // Lookup table indicates which way to move along each axis per SpriteEffects enum value.
     static XMVECTORF32 axisDirectionTable[4] =

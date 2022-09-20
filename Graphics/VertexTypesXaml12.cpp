@@ -11,6 +11,7 @@
 #include "VertexTypesXaml12.h"
 
 using namespace DirectX;
+using namespace DirectX::DXTKXAML12;
 
 //--------------------------------------------------------------------------------------
 // Vertex struct holding position information.

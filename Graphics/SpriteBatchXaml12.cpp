@@ -21,6 +21,7 @@
 
 using namespace DirectX;
 using namespace std;
+using namespace DirectX::DXTKXAML12;
 using Microsoft::WRL::ComPtr;
 
 namespace
