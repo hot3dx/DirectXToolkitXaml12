@@ -17,12 +17,16 @@ library contains all the files in that directory.
 # Use C:\DirectXToolKitXaml12
 for zero problems with App1 sample
 
-Windows 10 OS Build 20H2
-Visual Studio C++ 16.8.3
-18362
+NAMESPACE ADDED:
+using namespace DirectX::DXTKXAML12;
+Good, good, much easier there is an example in Rotodraw 3d DirectX 12, Up in about an hour
+
+Windows 11 OS Build 21H2
+Visual Studio C++ 17.3.4
+19041 - to 10.0.22000.0 easy as a click
 C++ 17
 C - 17
-build tools 142
+build tools 143
 
 -- To see the features you must download the 
 -- App1 example and compile it after you 
