@@ -11,7 +11,7 @@
 #include "EffectCommonXaml12.h"
 
 using namespace DirectX;
-
+using namespace DirectX::DXTKXAML12;
 
 // Constant buffer layout. Must match the shader!
 struct PBREffectConstants

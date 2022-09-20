@@ -14,7 +14,8 @@
 #include "GraphicsMemoryXaml12.h"
 
 using namespace DirectX;
-using namespace DirectX::Internal;
+using namespace DirectX::DXTKXAML12;
+using namespace DirectX::DXTKXAML12::Internal;
 using Microsoft::WRL::ComPtr;
 
 

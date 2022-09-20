@@ -20,6 +20,7 @@
 
 
 using namespace DirectX;
+using namespace DirectX::DXTKXAML12;
 using namespace std;
 
 #ifndef _CPPRTTI 
