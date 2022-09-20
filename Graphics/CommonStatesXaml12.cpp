@@ -13,7 +13,7 @@
 #include "DescriptorHeapXaml12.h"
 
 using namespace DirectX;
-
+using namespace DirectX::DXTKXAML12;
 // --------------------------------------------------------------------------
 // Blend States
 // --------------------------------------------------------------------------

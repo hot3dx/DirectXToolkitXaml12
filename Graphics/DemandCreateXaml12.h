@@ -16,34 +16,37 @@
 
 namespace DirectX
 {
-    // Helper for lazily creating a D3D resource.
-    template<typename T, typename TCreateFunc>
-    inline T* DemandCreate(Microsoft::WRL::ComPtr<T>& comPtr, std::mutex& mutex, TCreateFunc createFunc)
-    {
-        T* result = comPtr.Get();
-
-        // Double-checked lock pattern.
-        MemoryBarrier();
-
-        if (!result)
+        namespace DXTKXAML12
         {
-            std::lock_guard<std::mutex> lock(mutex);
+            // Helper for lazily creating a D3D resource.
+        template<typename T, typename TCreateFunc>
+        inline T* DemandCreate(Microsoft::WRL::ComPtr<T>& comPtr, std::mutex& mutex, TCreateFunc createFunc)
+        {
+            T* result = comPtr.Get();
 
-            result = comPtr.Get();
-        
+            // Double-checked lock pattern.
+            MemoryBarrier();
+
             if (!result)
             {
-                // Create the new object.
-                ThrowIfFailed(
-                    createFunc(&result)
-                );
+                std::lock_guard<std::mutex> lock(mutex);
 
-                MemoryBarrier();
+                result = comPtr.Get();
 
-                comPtr.Attach(result);
+                if (!result)
+                {
+                    // Create the new object.
+                    ThrowIfFailed(
+                        createFunc(&result)
+                    );
+
+                    MemoryBarrier();
+
+                    comPtr.Attach(result);
+                }
             }
-        }
 
-        return result;
+            return result;
+        }
     }
 }

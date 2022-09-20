@@ -13,9 +13,10 @@
 #include "PlatformHelpersXaml12.h"
 
 using namespace DirectX;
+using namespace DirectX::DXTKXAML12;
 
 _Use_decl_annotations_
-void DirectX::CreateShaderResourceView(
+void DirectX::DXTKXAML12::CreateShaderResourceView(
     ID3D12Device* device,
     ID3D12Resource* tex,
     D3D12_CPU_DESCRIPTOR_HANDLE srvDescriptor,

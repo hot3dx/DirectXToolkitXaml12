@@ -13,9 +13,9 @@
 #include "BinaryReaderXaml12.h"
 
 using namespace DirectX;
+using namespace DirectX::DXTKXAML12;
 
-
-// Constructor reads from the filesystem.
+// Constructor reads from the filesystem
 BinaryReader::BinaryReader(_In_z_ wchar_t const* fileName) :
     mPos(nullptr),
     mEnd(nullptr)
