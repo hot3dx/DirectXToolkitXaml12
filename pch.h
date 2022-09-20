@@ -33,7 +33,6 @@
 #include <agile.h>
 #include <concrt.h>
 #include <collection.h>
-//#include "App.xaml.h"
 #include <synchapi.h>
 #include <strsafe.h>
 #if defined(_DEBUG)

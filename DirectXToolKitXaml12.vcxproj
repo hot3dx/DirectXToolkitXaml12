@@ -42,35 +42,35 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>false</WholeProgramOptimization>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>false</WholeProgramOptimization>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -128,7 +128,7 @@
       <ConformanceMode>false</ConformanceMode>
       <AdditionalOptions>/bigobj /JMC /Yu"pch.h" /MP /GS /analyze- /W3 /wd"4453" /wd"28204" /Zc:wchar_t /I"C:\Users\hot3dx-home\Source\Repos\Xaml\DirectXToolKitXaml12" %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4453;28024</DisableSpecificWarnings>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
@@ -165,7 +165,7 @@
       <Optimization>Disabled</Optimization>
       <BasicRuntimeChecks>
       </BasicRuntimeChecks>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
@@ -187,7 +187,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <CompileAsWinRT>false</CompileAsWinRT>
       <SDLCheck>true</SDLCheck>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
@@ -201,7 +201,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <CompileAsWinRT>false</CompileAsWinRT>
       <SDLCheck>true</SDLCheck>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
@@ -282,7 +282,7 @@
       <SupportJustMyCode>true</SupportJustMyCode>
       <ProgramDataBaseFileName>$(IntDir)$(PlatformToolVersion).pdb</ProgramDataBaseFileName>
       <AssemblerOutput>All</AssemblerOutput>
-      <CompileAs>CompileAsCpp</CompileAs>
+      <CompileAs>Default</CompileAs>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
@@ -313,10 +313,14 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Audio\AudioXaml12_22.h" />
     <ClInclude Include="Audio\AudioFileReaderXaml12.h" />
     <ClInclude Include="Audio\AudioXaml12.h" />
     <ClInclude Include="Audio\MediaReaderXaml12.h" />
+    <ClInclude Include="Audio\SoundCommonXaml12.h" />
     <ClInclude Include="Audio\SoundEffectXaml12.h" />
+    <ClInclude Include="Audio\WaveBankReaderXaml12.h" />
+    <ClInclude Include="Audio\WAVFileReaderXaml12.h" />
     <ClInclude Include="Audio\XAudio2HelpersXaml12.h" />
     <ClInclude Include="DirectXToolKitXaml12.h" />
     <ClInclude Include="Graphics\AlignedNewXaml12.h" />
@@ -364,10 +368,19 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Audio\AudioEngineXaml12.cpp" />
     <ClCompile Include="Audio\AudioFileReaderXaml12.cpp" />
     <ClCompile Include="Audio\AudioXaml12.cpp" />
+    <ClCompile Include="Audio\DynamicSoundEffectInstanceXaml12_22.cpp" />
     <ClCompile Include="Audio\MediaReaderXaml12.cpp" />
+    <ClCompile Include="Audio\SoundCommonXaml12.cpp" />
+    <ClCompile Include="Audio\SoundEffectInstanceXaml12.cpp" />
     <ClCompile Include="Audio\SoundEffectXaml12.cpp" />
+    <ClCompile Include="Audio\SoundEffectXaml12_22.cpp" />
+    <ClCompile Include="Audio\SoundStreamInstanceXaml12.cpp" />
+    <ClCompile Include="Audio\WaveBankReaderXaml12.cpp" />
+    <ClCompile Include="Audio\WaveBankXaml12.cpp" />
+    <ClCompile Include="Audio\WAVFileReaderXaml12.cpp" />
     <ClCompile Include="DirectXToolKitXaml12.cpp">
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/bigobj %(AdditionalOptions)</AdditionalOptions>
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">/bigobj %(AdditionalOptions)</AdditionalOptions>

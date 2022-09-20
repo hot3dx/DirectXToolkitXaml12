@@ -168,6 +168,33 @@
     <ClCompile Include="Graphics\BasicPostProcessXaml12.cpp">
       <Filter>Src</Filter>
     </ClCompile>
+    <ClCompile Include="Audio\WaveBankReaderXaml12.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio\WaveBankXaml12.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio\WAVFileReaderXaml12.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio\SoundCommonXaml12.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio\SoundEffectInstanceXaml12.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio\AudioEngineXaml12.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio\SoundStreamInstanceXaml12.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio\SoundEffectXaml12_22.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio\DynamicSoundEffectInstanceXaml12_22.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DirectXToolKitXaml12.h" />
@@ -310,6 +337,18 @@
     </ClInclude>
     <ClInclude Include="Graphics\EffectCommonXaml12.h">
       <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="Audio\SoundCommonXaml12.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Audio\WaveBankReaderXaml12.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Audio\WAVFileReaderXaml12.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Audio\AudioXaml12_22.h">
+      <Filter>Audio</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
