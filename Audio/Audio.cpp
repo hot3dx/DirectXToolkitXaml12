@@ -13,6 +13,7 @@ using namespace Microsoft::WRL;
 using namespace Windows::Foundation;
 using namespace Windows::UI::Core;
 using namespace Windows::Graphics::Display;
+using namespace DirectX::DXTKXAML12;
 
 Audio::Audio() :
     m_audioAvailable(false)
