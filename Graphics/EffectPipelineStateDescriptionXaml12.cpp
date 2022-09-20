@@ -15,6 +15,7 @@
 
 
 using namespace DirectX;
+using namespace DirectX::DXTKXAML12;
 
 namespace
 {

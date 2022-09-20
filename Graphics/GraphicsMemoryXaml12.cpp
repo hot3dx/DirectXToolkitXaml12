@@ -13,6 +13,7 @@
 #include "LinearAllocatorXaml12.h"
 
 using namespace DirectX;
+using namespace DirectX::DXTKXAML12; 
 using Microsoft::WRL::ComPtr;
 using ScopedLock = std::lock_guard<std::mutex>;
 
@@ -214,7 +215,7 @@ public:
         {
             throw std::exception("GraphicsMemory is a per-device singleton");
         }// Old s_graphicsMemory[device] = this; // produced error
-        s_graphicsMemory[device] = reinterpret_cast<DirectX::GraphicsMemory::Impl*>(this);
+        s_graphicsMemory[device] = reinterpret_cast<DirectX::DXTKXAML12::GraphicsMemory::Impl*>(this);
         //s_graphicsMemory[device] = (DirectX::GraphicsMemory::Impl*)this;
 //#endif
     }

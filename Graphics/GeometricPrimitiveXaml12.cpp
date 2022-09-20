@@ -19,6 +19,7 @@
 #include "MyResourceUploadBatchXaml12.h"
 
 using namespace DirectX;
+using namespace DirectX::DXTKXAML12; 
 using Microsoft::WRL::ComPtr;
 
 // Internal GeometricPrimitive implementation class.

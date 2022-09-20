@@ -18,6 +18,7 @@
 
 
 using namespace DirectX;
+using namespace DirectX::DXTKXAML12;
 using Microsoft::WRL::ComPtr;
 
 // Internal EffectFactory implementation class. Only one of these helpers is allocated

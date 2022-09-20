@@ -20,6 +20,7 @@
 #endif
 
 using namespace DirectX;
+using namespace DirectX::DXTKXAML12; 
 using Microsoft::WRL::ComPtr;
 
 LinearAllocatorPage::LinearAllocatorPage() noexcept
