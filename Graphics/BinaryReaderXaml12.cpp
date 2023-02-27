@@ -13,9 +13,9 @@
 #include "BinaryReaderXaml12.h"
 
 using namespace DirectX;
+using namespace DirectX::DXTKXAML12;
 
-
-// Constructor reads from the filesystem.
+// Constructor reads from the filesystem
 BinaryReader::BinaryReader(_In_z_ wchar_t const* fileName) :
     mPos(nullptr),
     mEnd(nullptr)
@@ -56,7 +56,7 @@ HRESULT BinaryReader::ReadEntireFile(_In_z_ wchar_t const* fileName, _Inout_ std
         return HRESULT_FROM_WIN32(GetLastError());
 
     // Get the file size.
-    FILE_STANDARD_INFO fileInfo;
+    FILE_STANDARD_INFO fileInfo{};
     if (!GetFileInformationByHandleEx(hFile.get(), FileStandardInfo, &fileInfo, sizeof(fileInfo)))
     {
         return HRESULT_FROM_WIN32(GetLastError());

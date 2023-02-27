@@ -13,10 +13,10 @@
 #include "BinaryWriterXaml12.h"
 
 using namespace DirectX;
-
+using namespace DirectX::DXTKXAML12;
 
 // Constructor reads from the filesystem.
-BinaryWriter::BinaryWriter(_In_z_ wchar_t const* fileName) :
+BinaryWriter::BinaryWriter(_In_z_ wchar_t const* fileName):
     mPos(nullptr),
     mEnd(nullptr)
 {

@@ -19,49 +19,53 @@ using namespace std;
 
 namespace DirectX
 {
-    // Derive from this to customize operator new and delete for
-    // types that have special heap alignment requirements.
-    //
-    // Example usage:
-    //
-    //      __declspec(align(16)) struct MyAlignedType : public AlignedNew<MyAlignedType>
-
-    template<typename TDerived>
-    struct AlignedNew
+    namespace DXTKXAML12
     {
-        // Allocate aligned memory.
-        static void* operator new (size_t size)
+
+        // Derive from this to customize operator new and delete for
+        // types that have special heap alignment requirements.
+        //
+        // Example usage:
+        //
+        //      __declspec(align(16)) struct MyAlignedType : public AlignedNew<MyAlignedType>
+
+        template<typename TDerived>
+        struct AlignedNew
         {
-            const size_t alignment = __alignof(TDerived);
+            // Allocate aligned memory.
+            static void* operator new (size_t size)
+            {
+                const size_t alignment = __alignof(TDerived);
 
-            static_assert(alignment > 8, "AlignedNew is only useful for types with > 8 byte alignment. Did you forget a __declspec(align) on TDerived?");
+                static_assert(alignment > 8, "AlignedNew is only useful for types with > 8 byte alignment. Did you forget a __declspec(align) on TDerived?");
 
-            void* ptr = _aligned_malloc(size, alignment);
+                void* ptr = _aligned_malloc(size, alignment);
 
-            if (!ptr)
-                // old throw std::bad_alloc();
-                throw std::bad_alloc();
-            return ptr;
-        }
-
-
-        // Free aligned memory.
-        static void operator delete (void* ptr)
-        {
-            _aligned_free(ptr);
-        }
+                if (!ptr)
+                    // old throw std::bad_alloc();
+                    throw std::bad_alloc();
+                return ptr;
+            }
 
 
-        // Array overloads.
-        static void* operator new[](size_t size)
-        {
-            return operator new(size);
-        }
+            // Free aligned memory.
+            static void operator delete (void* ptr)
+            {
+                _aligned_free(ptr);
+            }
 
 
-        static void operator delete[](void* ptr)
-        {
-            operator delete(ptr);
-        }
-    };
+            // Array overloads.
+            static void* operator new[](size_t size)
+            {
+                return operator new(size);
+            }
+
+
+                static void operator delete[](void* ptr)
+            {
+                operator delete(ptr);
+            }
+        };
+    }
 }
