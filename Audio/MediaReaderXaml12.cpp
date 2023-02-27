@@ -29,13 +29,13 @@ WAVEFORMATEX* MediaReader::GetOutputWaveFormatEx()
 
 Platform::Array<byte>^ MediaReader::LoadMedia(_In_ Platform::String^ filename)
 {
-    DirectX::ThrowIfFailed(
+    DirectX::DXTKXAML12::ThrowIfFailed(
         MFStartup(MF_VERSION)
         );
 
     ComPtr<IMFSourceReader> reader;
     Platform::String^ file = Platform::String::Concat(m_installedLocationPath, filename)->ToString();
-    DirectX::ThrowIfFailed(
+    DirectX::DXTKXAML12::ThrowIfFailed(
         MFCreateSourceReaderFromURL(
             file->Data(),
             nullptr,
@@ -47,32 +47,32 @@ Platform::Array<byte>^ MediaReader::LoadMedia(_In_ Platform::String^ filename)
     // XAudio2 on Windows can process PCM and ADPCM-encoded buffers.
     // When using MediaFoundation, this sample always decodes into PCM.
     Microsoft::WRL::ComPtr<IMFMediaType> mediaType;
-    DirectX::ThrowIfFailed(
+    DirectX::DXTKXAML12::ThrowIfFailed(
         MFCreateMediaType(&mediaType)
         );
 
-    DirectX::ThrowIfFailed(
+    DirectX::DXTKXAML12::ThrowIfFailed(
         mediaType->SetGUID(MF_MT_MAJOR_TYPE, MFMediaType_Audio)
 
         );
 
-    DirectX::ThrowIfFailed(
+    DirectX::DXTKXAML12::ThrowIfFailed(
         mediaType->SetGUID(MF_MT_SUBTYPE, MFAudioFormat_PCM)
         );
 
-    DirectX::ThrowIfFailed(
+    DirectX::DXTKXAML12::ThrowIfFailed(
         reader->SetCurrentMediaType(static_cast<UINT32>(MF_SOURCE_READER_FIRST_AUDIO_STREAM), 0, mediaType.Get())
         );
 
     // Get the completeWAVEFORMAT from the Media Type.
     Microsoft::WRL::ComPtr<IMFMediaType> outputMediaType;
-    DirectX::ThrowIfFailed(
+    DirectX::DXTKXAML12::ThrowIfFailed(
         reader->GetCurrentMediaType(static_cast<UINT32>(MF_SOURCE_READER_FIRST_AUDIO_STREAM), &outputMediaType)
         );
 
     UINT32 size = 0;
     WAVEFORMATEX* waveFormat;
-    DirectX::ThrowIfFailed(
+    DirectX::DXTKXAML12::ThrowIfFailed(
         MFCreateWaveFormatExFromMFMediaType(outputMediaType.Get(), &waveFormat, &size)
         );
 
@@ -80,7 +80,7 @@ Platform::Array<byte>^ MediaReader::LoadMedia(_In_ Platform::String^ filename)
     CoTaskMemFree(waveFormat);
 
     PROPVARIANT propVariant;
-    DirectX::ThrowIfFailed(
+    DirectX::DXTKXAML12::ThrowIfFailed(
         reader->GetPresentationAttribute(static_cast<UINT32>(MF_SOURCE_READER_MEDIASOURCE), MF_PD_DURATION, &propVariant)
         );
     // 'duration' is in 100ns units; convert to seconds, and round up
@@ -102,19 +102,19 @@ Platform::Array<byte>^ MediaReader::LoadMedia(_In_ Platform::String^ filename)
     bool done = false;
     while (!done)
     {
-        DirectX::ThrowIfFailed(
+        DirectX::DXTKXAML12::ThrowIfFailed(
             reader->ReadSample(static_cast<UINT32>(MF_SOURCE_READER_FIRST_AUDIO_STREAM), 0, nullptr, &flags, nullptr, &sample)
             );
 
         if (sample != nullptr)
         {
-            DirectX::ThrowIfFailed(
+            DirectX::DXTKXAML12::ThrowIfFailed(
                 sample->ConvertToContiguousBuffer(&mediaBuffer)
                 );
 
             BYTE* audioData = nullptr;
             DWORD sampleBufferLength = 0;
-            DirectX::ThrowIfFailed(
+            DirectX::DXTKXAML12::ThrowIfFailed(
                 mediaBuffer->Lock(&audioData, nullptr, &sampleBufferLength)
                 );
 

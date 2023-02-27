@@ -6,7 +6,7 @@
 //// Copyright (c) Microsoft Corporation. All rights reserved
 
 #include "pch.h"
-#include "AudioXaml12.h"
+#include "AudioXaml12_22.h"
 #include "SoundEffectXaml12.h"
 #include "Graphics\PlatformHelpersXaml12.h"
 
@@ -32,7 +32,7 @@ void SoundEffect::Initialize(
     }
 
     // Create a source voice for this sound effect.
-    DirectX::ThrowIfFailed(
+    DirectX::DXTKXAML12::ThrowIfFailed(
         masteringEngine->CreateSourceVoice(
             &m_sourceVoice,
             sourceFormat
@@ -54,10 +54,10 @@ void SoundEffect::PlaySound(_In_ float volume)
     }
 
     // Interrupt sound effect if it is currently playing.
-    DirectX::ThrowIfFailed(
+    DirectX::DXTKXAML12::ThrowIfFailed(
         m_sourceVoice->Stop()
         );
-    DirectX::ThrowIfFailed(
+    DirectX::DXTKXAML12::ThrowIfFailed(
         m_sourceVoice->FlushSourceBuffers()
         );
 
@@ -66,13 +66,13 @@ void SoundEffect::PlaySound(_In_ float volume)
     buffer.pAudioData = m_soundData->Data;
     buffer.Flags = XAUDIO2_END_OF_STREAM;
 
-    DirectX::ThrowIfFailed(
+    DirectX::DXTKXAML12::ThrowIfFailed(
         m_sourceVoice->SetVolume(volume)
         );
-    DirectX::ThrowIfFailed(
+    DirectX::DXTKXAML12::ThrowIfFailed(
         m_sourceVoice->SubmitSourceBuffer(&buffer)
         );
-    DirectX::ThrowIfFailed(
+    DirectX::DXTKXAML12::ThrowIfFailed(
         m_sourceVoice->Start()
         );
 }

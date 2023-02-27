@@ -27,7 +27,7 @@ void Audio::CreateDeviceIndependentResources()
 {
     UINT32 flags = 0;
 
-    DirectX::ThrowIfFailed(
+    DirectX::DXTKXAML12::ThrowIfFailed(
         XAudio2Create(&m_musicEngine, flags)
         );
 
@@ -47,7 +47,7 @@ void Audio::CreateDeviceIndependentResources()
         return;
     }
 
-    DirectX::ThrowIfFailed(
+    DirectX::DXTKXAML12::ThrowIfFailed(
         XAudio2Create(&m_soundEffectEngine, flags)
         );
 
@@ -55,7 +55,7 @@ void Audio::CreateDeviceIndependentResources()
     m_soundEffectEngine->SetDebugConfiguration(&debugConfiguration);
 #endif
 
-    DirectX::ThrowIfFailed(
+    DirectX::DXTKXAML12::ThrowIfFailed(
         m_soundEffectEngine->CreateMasteringVoice(&m_soundEffectMasteringVoice)
         );
 
@@ -85,8 +85,8 @@ void Audio::ResumeAudio()
 {
     if (m_audioAvailable)
     {
-        DirectX::ThrowIfFailed(m_musicEngine->StartEngine());
-        DirectX::ThrowIfFailed(m_soundEffectEngine->StartEngine());
+        DirectX::DXTKXAML12::ThrowIfFailed(m_musicEngine->StartEngine());
+        DirectX::DXTKXAML12::ThrowIfFailed(m_soundEffectEngine->StartEngine());
     }
 }
 
