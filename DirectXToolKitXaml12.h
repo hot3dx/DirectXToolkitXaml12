@@ -1,4 +1,3 @@
-﻿//--------------------------------------------------------------------------------------
 // File: DirectXToolKitXaml12.h
 //
 // Copyright (c) Jeff Kubitz - hot3dx. All rights reserved.
@@ -8,3 +7,11 @@
 //--------------------------------------------------------------------------------------
 
 #pragma once
+
+namespace DirectX
+{
+	namespace DXTKXAML12
+	{
+
+	}
+}

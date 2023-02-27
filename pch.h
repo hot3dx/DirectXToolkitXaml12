@@ -1,4 +1,4 @@
-﻿//--------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------
 // File: pch.h
 //
 // Copyright (c) Jeff Kubitz - hot3dx. All rights reserved.
@@ -24,7 +24,7 @@
 #include <d2d1effects_2.h>
 #include <dwrite_3.h>
 #include <wincodec.h>
-// Uses NuGet.org package WinPixEventRuntime 1.0.200127001
+// Uses NuGet.org package WinPixEventRuntime 1.0.220810001
 #include <pix3.h>
 #include <DirectXColors.h>
 #include <DirectXMath.h>
@@ -33,7 +33,6 @@
 #include <agile.h>
 #include <concrt.h>
 #include <collection.h>
-//#include "App.xaml.h"
 #include <synchapi.h>
 #include <strsafe.h>
 #if defined(_DEBUG)
@@ -100,3 +99,5 @@ struct ColorF
 };
 
 #define SINGLETHREADED FALSE
+
+#include "framework.h"

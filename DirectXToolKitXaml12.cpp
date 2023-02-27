@@ -1,11 +1,13 @@
-﻿//--------------------------------------------------------------------------------------
-// File: DirectXTollKitXaml12.cpp
 //
-// Copyright (c) Jeff Kubitz - hot3dx. All rights reserved.
-// 
-// No warranty is expressed or implied use at own risk
 //
-//--------------------------------------------------------------------------------------
+// DirectXToolKitXaml12.cpp : Defines the functions for the static library.
+//
 
 #include "pch.h"
 #include "DirectXToolKitXaml12.h"
+#include "framework.h"
+
+// TODO: This is an example of a library function
+void fnDirectXToolKitXaml12()
+{
+}
