@@ -4,6 +4,19 @@
 
 ![App1 Example Screenshot](https://github.com/hot3dx/DirectXToolkitXaml12/blob/master/Assets/App1-DirectXToolKitXaml12-Sample-App.png)
 
+//////////////////////////////////////////
+2-26-23 Generated Files Folder removed. It caused conflicts with every directX 12 Xaml12 program
+there are assorted other fixes including Release and Debug X64 and Win32 Compiling and linking perfection.
+
+No really when I put Hot3dxRotoDraw up in the next few days you'll see there are many fixes and additions!
+
+Visual Studio Studio 2022, build tools 143, Windows 10 and 11, 22H2 Required the warp emulator is available for those without DirectX 12 graphics
+
+required NuGet package id="WinPixEventRuntime" version="1.0.220810001" targetFramework="native"
+
+C\C++ ISO C++17, C std:17
+///////////////////////////////////////////
+
 #All files renamed ...Xaml12 so as not to conflict with the DirectXTK12 of Chuck Walburn
 #12/31/2020 
 #Happy New Year's present 
