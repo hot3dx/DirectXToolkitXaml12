@@ -614,3 +614,30 @@ float Hot3dx::Hot3dx12Rotate::yCoordofZRot3(float x, float y, float radAngle) {
 	return (float)((x * sin(radAngle)) + (y * cos(radAngle)));
 }
 
+///////////////////
+// float
+//////////////////
+float Hot3dx::Hot3dx12Rotate::yCoordofXRot3f(float y, float z, float radAngle) {
+	return (y * cosf(radAngle)) + (z * sinf(radAngle));
+}
+float Hot3dx::Hot3dx12Rotate::zCoordofXRot3f(float y, float z, float radAngle) {
+	return (z * cosf(radAngle)) - (y * sinf(radAngle));
+}
+
+float Hot3dx::Hot3dx12Rotate::xCoordofYRot3f(float x, float z, float a) {
+	return (x * cosf(a)) + (z * sinf(a));
+}
+
+float Hot3dx::Hot3dx12Rotate::zCoordofYRot3f(float x, float z, float a) {
+	return (z * cosf(a)) - (x * sinf(a));
+}
+
+float Hot3dx::Hot3dx12Rotate::xCoordofZRot3f(float x, float y, float radAngle) {
+	//	return (float)((x* cos(a))+(y*(-sin(a))));
+	return (x * cosf(radAngle)) - (y * sinf(radAngle));
+}
+
+float Hot3dx::Hot3dx12Rotate::yCoordofZRot3f(float x, float y, float radAngle) {
+	return (x * sinf(radAngle)) + (y * cosf(radAngle));
+}
+

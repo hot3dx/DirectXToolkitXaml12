@@ -24,7 +24,9 @@ namespace Hot3dx
 	{
 	public:
 
-	internal:CHot3dxD3D12Geometry();
+	internal:
+		
+		CHot3dxD3D12Geometry();
 	
 		// XMFLOAT3 Operations
 		double XM_CALLCONV distanceBetweenPoints(XMFLOAT3 v, XMFLOAT3 pos);

@@ -48,121 +48,124 @@
 
 namespace DirectX
 {
-    class LinearAllocatorPage
+    namespace DXTKXAML12
     {
-    public:
-        LinearAllocatorPage() noexcept;
+        class LinearAllocatorPage
+        {
+        public:
+            LinearAllocatorPage() noexcept;
 
-        LinearAllocatorPage(LinearAllocatorPage&&) = delete;
-        LinearAllocatorPage& operator= (LinearAllocatorPage&&) = delete;
+            LinearAllocatorPage(LinearAllocatorPage&&) = delete;
+            LinearAllocatorPage& operator= (LinearAllocatorPage&&) = delete;
 
-        LinearAllocatorPage(LinearAllocatorPage const&) = delete;
-        LinearAllocatorPage& operator=(LinearAllocatorPage const&) = delete;
+            LinearAllocatorPage(LinearAllocatorPage const&) = delete;
+            LinearAllocatorPage& operator=(LinearAllocatorPage const&) = delete;
 
-        size_t Suballocate(_In_ size_t size, _In_ size_t alignment);
+            size_t Suballocate(_In_ size_t size, _In_ size_t alignment);
 
-        void* BaseMemory() const { return mMemory; }
-        ID3D12Resource* UploadResource() const { return mUploadResource.Get(); }
-        D3D12_GPU_VIRTUAL_ADDRESS GpuAddress() const { return mGpuAddress; }
-        size_t BytesUsed() const { return mOffset; }
-        size_t Size() const { return mSize; }
+            void* BaseMemory() const { return mMemory; }
+            ID3D12Resource* UploadResource() const { return mUploadResource.Get(); }
+            D3D12_GPU_VIRTUAL_ADDRESS GpuAddress() const { return mGpuAddress; }
+            size_t BytesUsed() const { return mOffset; }
+            size_t Size() const { return mSize; }
 
-        void AddRef() { mRefCount.fetch_add(1); }
-        int32_t RefCount() const { return mRefCount.load(); }
-        void Release();
+            void AddRef() { mRefCount.fetch_add(1); }
+            int32_t RefCount() const { return mRefCount.load(); }
+            void Release();
 
-    protected:
-        friend class LinearAllocator;
+        protected:
+            friend class LinearAllocator;
 
-        LinearAllocatorPage*                    pPrevPage;
-        LinearAllocatorPage*                    pNextPage;
+            LinearAllocatorPage* pPrevPage;
+            LinearAllocatorPage* pNextPage;
 
-        void*                                   mMemory;
-        Microsoft::WRL::ComPtr<ID3D12Resource>  mUploadResource;
-        Microsoft::WRL::ComPtr<ID3D12Fence>     mFence;
-        uint64_t                                mPendingFence;
-        D3D12_GPU_VIRTUAL_ADDRESS               mGpuAddress;
-        size_t                                  mOffset;
-        size_t                                  mSize;
+            void* mMemory;
+            Microsoft::WRL::ComPtr<ID3D12Resource>  mUploadResource;
+            Microsoft::WRL::ComPtr<ID3D12Fence>     mFence;
+            uint64_t                                mPendingFence;
+            D3D12_GPU_VIRTUAL_ADDRESS               mGpuAddress;
+            size_t                                  mOffset;
+            size_t                                  mSize;
 
-    private:
-        std::atomic<int32_t>                    mRefCount;
-    };
+        private:
+            std::atomic<int32_t>                    mRefCount;
+        };
 
-    class LinearAllocator
-    {
-    public:        
-        // These values will be rounded up to the nearest 64k.
-        // You can specify zero for incrementalSizeBytes to increment
-        // by 1 page (64k).
-        LinearAllocator(
-            _In_ ID3D12Device* pDevice,
-            _In_ size_t pageSize,
-            _In_ size_t preallocateBytes = 0);
+        class LinearAllocator
+        {
+        public:
+            // These values will be rounded up to the nearest 64k.
+            // You can specify zero for incrementalSizeBytes to increment
+            // by 1 page (64k).
+            LinearAllocator(
+                _In_ ID3D12Device* pDevice,
+                _In_ size_t pageSize,
+                _In_ size_t preallocateBytes = 0);
 
-        LinearAllocator(LinearAllocator&&) = default;
-        LinearAllocator& operator= (LinearAllocator&&) = default;
+            LinearAllocator(LinearAllocator&&) = default;
+            LinearAllocator& operator= (LinearAllocator&&) = default;
 
-        LinearAllocator(LinearAllocator const&) = delete;
-        LinearAllocator& operator=(LinearAllocator const&) = delete;
+            LinearAllocator(LinearAllocator const&) = delete;
+            LinearAllocator& operator=(LinearAllocator const&) = delete;
 
-        ~LinearAllocator();
+            ~LinearAllocator();
 
-        LinearAllocatorPage* FindPageForAlloc(_In_ size_t requestedSize, _In_ size_t alignment);
+            LinearAllocatorPage* FindPageForAlloc(_In_ size_t requestedSize, _In_ size_t alignment);
 
-        // Call this at least once a frame to check if pages have become available.
-        void RetirePendingPages();
+            // Call this at least once a frame to check if pages have become available.
+            void RetirePendingPages();
 
-        // Call this after you submit your work to the driver.
-        // (e.g. immediately before Present.)
-        void FenceCommittedPages(_In_ ID3D12CommandQueue* commandQueue);
+            // Call this after you submit your work to the driver.
+            // (e.g. immediately before Present.)
+            void FenceCommittedPages(_In_ ID3D12CommandQueue* commandQueue);
 
-        // Throws away all currently unused pages
-        void Shrink();
+            // Throws away all currently unused pages
+            void Shrink();
 
-        // Statistics
-        size_t CommittedPageCount() const { return m_numPending; }
-        size_t TotalPageCount() const { return m_totalPages; }
-        size_t CommittedMemoryUsage() const { return m_numPending * m_increment; }
-        size_t TotalMemoryUsage() const { return m_totalPages * m_increment; }
-        size_t PageSize() const { return m_increment; }
+            // Statistics
+            size_t CommittedPageCount() const { return m_numPending; }
+            size_t TotalPageCount() const { return m_totalPages; }
+            size_t CommittedMemoryUsage() const { return m_numPending * m_increment; }
+            size_t TotalMemoryUsage() const { return m_totalPages * m_increment; }
+            size_t PageSize() const { return m_increment; }
 
 #if defined(_DEBUG) || defined(PROFILE)
-        // Debug info
-        const wchar_t* GetDebugName() const { return m_debugName.c_str(); }
-        void SetDebugName(const wchar_t* name);
-        void SetDebugName(const char* name);
+            // Debug info
+            const wchar_t* GetDebugName() const { return m_debugName.c_str(); }
+            void SetDebugName(const wchar_t* name);
+            void SetDebugName(const char* name);
 #endif
 
-    private:
-        Microsoft::WRL::ComPtr<ID3D12Device>    m_device;
-        LinearAllocatorPage*                    m_pendingPages; // Pages in use by the GPU
-        LinearAllocatorPage*                    m_usedPages;    // Pages to be submitted to the GPU
-        LinearAllocatorPage*                    m_unusedPages;  // Pages not being used right now
-        size_t                                  m_increment;
-        size_t                                  m_numPending;
-        size_t                                  m_totalPages;
-        
-        LinearAllocatorPage* GetPageForAlloc(size_t sizeBytes, size_t alignment);
-        LinearAllocatorPage* GetCleanPageForAlloc();
+        private:
+            Microsoft::WRL::ComPtr<ID3D12Device>    m_device;
+            LinearAllocatorPage* m_pendingPages; // Pages in use by the GPU
+            LinearAllocatorPage* m_usedPages;    // Pages to be submitted to the GPU
+            LinearAllocatorPage* m_unusedPages;  // Pages not being used right now
+            size_t                                  m_increment;
+            size_t                                  m_numPending;
+            size_t                                  m_totalPages;
 
-        LinearAllocatorPage* FindPageForAlloc(LinearAllocatorPage* list, size_t sizeBytes, size_t alignment);
+            LinearAllocatorPage* GetPageForAlloc(size_t sizeBytes, size_t alignment);
+            LinearAllocatorPage* GetCleanPageForAlloc();
 
-        LinearAllocatorPage* GetNewPage();
+            LinearAllocatorPage* FindPageForAlloc(LinearAllocatorPage* list, size_t sizeBytes, size_t alignment);
 
-        void UnlinkPage(LinearAllocatorPage* page);
-        void LinkPage(LinearAllocatorPage* page, LinearAllocatorPage*& list);
-        void LinkPageChain(LinearAllocatorPage* page, LinearAllocatorPage*& list);
-        void ReleasePage(LinearAllocatorPage* page);
-        void FreePages(LinearAllocatorPage* list);
+            LinearAllocatorPage* GetNewPage();
+
+            void UnlinkPage(LinearAllocatorPage* page);
+            void LinkPage(LinearAllocatorPage* page, LinearAllocatorPage*& list);
+            void LinkPageChain(LinearAllocatorPage* page, LinearAllocatorPage*& list);
+            void ReleasePage(LinearAllocatorPage* page);
+            void FreePages(LinearAllocatorPage* list);
 
 #if defined(_DEBUG) || defined(PROFILE)
-        std::wstring m_debugName;
+            std::wstring m_debugName;
 
-        static void ValidateList(LinearAllocatorPage* list);
-        void ValidatePageLists();
+            static void ValidateList(LinearAllocatorPage* list);
+            void ValidatePageLists();
 
-        void SetPageDebugName(LinearAllocatorPage* list);
+            void SetPageDebugName(LinearAllocatorPage* list);
 #endif
-    };
+        };
+    }
 }

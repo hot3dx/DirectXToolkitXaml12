@@ -29,7 +29,7 @@ namespace
 
 
     // Collection types used when generating the geometry.
-    inline void index_push_back(IndexCollection& indices, size_t value)
+    inline void index_push_back(DirectX::DXTKXAML12::IndexCollection& indices, size_t value)
     {
         CheckIndexOverflow(value);
         indices.push_back(static_cast<uint16_t>(value));
@@ -37,7 +37,7 @@ namespace
 
 
     // Helper for flipping winding of geometric primitives for LH vs. RH coords
-    inline void ReverseWinding(IndexCollection& indices, VertexCollection& vertices)
+    inline void ReverseWinding(DirectX::DXTKXAML12::IndexCollection& indices, DirectX::DXTKXAML12::VertexCollection& vertices)
     {
         assert((indices.size() % 3) == 0);
         for (auto it = indices.begin(); it != indices.end(); it += 3)
@@ -53,7 +53,7 @@ namespace
 
 
     // Helper for inverting normals of geometric primitives for 'inside' vs. 'outside' viewing
-    inline void InvertNormals(VertexCollection& vertices)
+    inline void InvertNormals(DirectX::DXTKXAML12::VertexCollection& vertices)
     {
         for (auto it = vertices.begin(); it != vertices.end(); ++it)
         {
@@ -64,7 +64,7 @@ namespace
     }
 }
 
-void DirectX::ComputeRectangleOrSquare(VertexCollection& vertices, IndexCollection& indices, const XMFLOAT3& size, bool rhcoords, bool invertn)
+void DirectX::DXTKXAML12::ComputeRectangleOrSquare(VertexCollection& vertices, IndexCollection& indices, const XMFLOAT3& size, bool rhcoords, bool invertn)
 {
     vertices.clear();
     indices.clear();
@@ -139,7 +139,7 @@ void DirectX::ComputeRectangleOrSquare(VertexCollection& vertices, IndexCollecti
 //--------------------------------------------------------------------------------------
 // Cube (aka a Hexahedron) or Box
 //--------------------------------------------------------------------------------------
-void DirectX::ComputeBox(VertexCollection& vertices, IndexCollection& indices, const XMFLOAT3& size, bool rhcoords, bool invertn)
+void DirectX::DXTKXAML12::ComputeBox(VertexCollection& vertices, IndexCollection& indices, const XMFLOAT3& size, bool rhcoords, bool invertn)
 {
     vertices.clear();
     indices.clear();
@@ -215,7 +215,7 @@ void DirectX::ComputeBox(VertexCollection& vertices, IndexCollection& indices, c
 //--------------------------------------------------------------------------------------
 // Sphere
 //--------------------------------------------------------------------------------------
-void DirectX::ComputeSphere(VertexCollection& vertices, IndexCollection& indices, float diameter, size_t tessellation, bool rhcoords, bool invertn)
+void DirectX::DXTKXAML12::ComputeSphere(VertexCollection& vertices, IndexCollection& indices, float diameter, size_t tessellation, bool rhcoords, bool invertn)
 {
     vertices.clear();
     indices.clear();
@@ -290,7 +290,7 @@ void DirectX::ComputeSphere(VertexCollection& vertices, IndexCollection& indices
 //--------------------------------------------------------------------------------------
 // Geodesic sphere
 //--------------------------------------------------------------------------------------
-void DirectX::ComputeGeoSphere(VertexCollection& vertices, IndexCollection& indices, float diameter, size_t tessellation, bool rhcoords)
+void DirectX::DXTKXAML12::ComputeGeoSphere(VertexCollection& vertices, IndexCollection& indices, float diameter, size_t tessellation, bool rhcoords)
 {
     vertices.clear();
     indices.clear();
@@ -639,7 +639,7 @@ namespace
 
 
     // Helper creates a triangle fan to close the end of a cylinder / cone
-    void CreateCylinderCap(VertexCollection& vertices, IndexCollection& indices, size_t tessellation, float height, float radius, bool isTop)
+    void CreateCylinderCap(DirectX::DXTKXAML12::VertexCollection& vertices, DirectX::DXTKXAML12::IndexCollection& indices, size_t tessellation, float height, float radius, bool isTop)
     {
         // Create cap indices.
         for (size_t i = 0; i < tessellation - 2; i++)
@@ -677,12 +677,12 @@ namespace
 
             XMVECTOR textureCoordinate = XMVectorMultiplyAdd(XMVectorSwizzle<0, 2, 3, 3>(circleVector), textureScale, g_XMOneHalf);
 
-            vertices.push_back(VertexPositionNormalTexture(position, normal, textureCoordinate));
+            vertices.push_back(DirectX::DXTKXAML12::VertexPositionNormalTexture(position, normal, textureCoordinate));
         }
     }
 }
 
-void DirectX::ComputeCylinder(VertexCollection& vertices, IndexCollection& indices, float height, float diameter, size_t tessellation, bool rhcoords)
+void DirectX::DXTKXAML12::ComputeCylinder(VertexCollection& vertices, IndexCollection& indices, float height, float diameter, size_t tessellation, bool rhcoords)
 {
     vertices.clear();
     indices.clear();
@@ -731,7 +731,7 @@ void DirectX::ComputeCylinder(VertexCollection& vertices, IndexCollection& indic
 
 
 // Creates a cone primitive.
-void DirectX::ComputeCone(VertexCollection& vertices, IndexCollection& indices, float diameter, float height, size_t tessellation, bool rhcoords)
+void DirectX::DXTKXAML12::ComputeCone(VertexCollection& vertices, IndexCollection& indices, float diameter, float height, size_t tessellation, bool rhcoords)
 {
     vertices.clear();
     indices.clear();
@@ -785,7 +785,7 @@ void DirectX::ComputeCone(VertexCollection& vertices, IndexCollection& indices, 
 //--------------------------------------------------------------------------------------
 // Torus
 //--------------------------------------------------------------------------------------
-void DirectX::ComputeTorus(VertexCollection& vertices, IndexCollection& indices, float diameter, float thickness, size_t tessellation, bool rhcoords)
+void DirectX::DXTKXAML12::ComputeTorus(VertexCollection& vertices, IndexCollection& indices, float diameter, float thickness, size_t tessellation, bool rhcoords)
 {
     vertices.clear();
     indices.clear();
@@ -849,7 +849,7 @@ void DirectX::ComputeTorus(VertexCollection& vertices, IndexCollection& indices,
 //--------------------------------------------------------------------------------------
 // Tetrahedron
 //--------------------------------------------------------------------------------------
-void DirectX::ComputeTetrahedron(VertexCollection& vertices, IndexCollection& indices, float size, bool rhcoords)
+void DirectX::DXTKXAML12::ComputeTetrahedron(VertexCollection& vertices, IndexCollection& indices, float size, bool rhcoords)
 {
     vertices.clear();
     indices.clear();
@@ -909,7 +909,7 @@ void DirectX::ComputeTetrahedron(VertexCollection& vertices, IndexCollection& in
 //--------------------------------------------------------------------------------------
 // Octahedron
 //--------------------------------------------------------------------------------------
-void DirectX::ComputeOctahedron(VertexCollection& vertices, IndexCollection& indices, float size, bool rhcoords)
+void DirectX::DXTKXAML12::ComputeOctahedron(VertexCollection& vertices, IndexCollection& indices, float size, bool rhcoords)
 {
     vertices.clear();
     indices.clear();
@@ -975,7 +975,7 @@ void DirectX::ComputeOctahedron(VertexCollection& vertices, IndexCollection& ind
 //--------------------------------------------------------------------------------------
 // Dodecahedron
 //--------------------------------------------------------------------------------------
-void DirectX::ComputeDodecahedron(VertexCollection& vertices, IndexCollection& indices, float size, bool rhcoords)
+void DirectX::DXTKXAML12::ComputeDodecahedron(VertexCollection& vertices, IndexCollection& indices, float size, bool rhcoords)
 {
     vertices.clear();
     indices.clear();
@@ -1106,7 +1106,7 @@ void DirectX::ComputeDodecahedron(VertexCollection& vertices, IndexCollection& i
 //--------------------------------------------------------------------------------------
 // Icosahedron
 //--------------------------------------------------------------------------------------
-void DirectX::ComputeIcosahedron(VertexCollection& vertices, IndexCollection& indices, float size, bool rhcoords)
+void DirectX::DXTKXAML12::ComputeIcosahedron(VertexCollection& vertices, IndexCollection& indices, float size, bool rhcoords)
 {
     vertices.clear();
     indices.clear();
@@ -1200,7 +1200,7 @@ namespace
 #include "Graphics\TeapotData.inc"
 
     // Tessellates the specified bezier patch.
-    void XM_CALLCONV TessellatePatch(VertexCollection& vertices, IndexCollection& indices, TeapotPatch const& patch, size_t tessellation, FXMVECTOR scale, bool isMirrored)
+    void XM_CALLCONV TessellatePatch(DirectX::DXTKXAML12::VertexCollection& vertices, DirectX::DXTKXAML12::IndexCollection& indices, TeapotPatch const& patch, size_t tessellation, FXMVECTOR scale, bool isMirrored)
     {
         // Look up the 16 control points for this patch.
         XMVECTOR controlPoints[16];
@@ -1212,22 +1212,22 @@ namespace
 
         // Create the index data.
         size_t vbase = vertices.size();
-        Bezier::CreatePatchIndices(tessellation, isMirrored, [&](size_t index)
+        Bezier::DXTKXAML12::CreatePatchIndices(tessellation, isMirrored, [&](size_t index)
                                    {
                                        index_push_back(indices, vbase + index);
                                    });
 
                                    // Create the vertex data.
-        Bezier::CreatePatchVertices(controlPoints, tessellation, isMirrored, [&](FXMVECTOR position, FXMVECTOR normal, FXMVECTOR textureCoordinate)
+        Bezier::DXTKXAML12::CreatePatchVertices(controlPoints, tessellation, isMirrored, [&](FXMVECTOR position, FXMVECTOR normal, FXMVECTOR textureCoordinate)
                                     {
-                                        vertices.push_back(VertexPositionNormalTexture(position, normal, textureCoordinate));
+                                        vertices.push_back(DirectX::DXTKXAML12::VertexPositionNormalTexture(position, normal, textureCoordinate));
                                     });
     }
 }
 
 
 // Creates a teapot primitive.
-void DirectX::ComputeTeapot(VertexCollection& vertices, IndexCollection& indices, float size, size_t tessellation, bool rhcoords)
+void DirectX::DXTKXAML12::ComputeTeapot(DirectX::DXTKXAML12::VertexCollection& vertices, DirectX::DXTKXAML12::IndexCollection& indices, float size, size_t tessellation, bool rhcoords)
 {
     vertices.clear();
     indices.clear();

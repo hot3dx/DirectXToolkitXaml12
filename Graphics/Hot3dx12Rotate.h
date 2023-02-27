@@ -81,6 +81,18 @@ namespace Hot3dx
 		float xCoordofZRot3(float x, float y, float radAngle);
 
 		float yCoordofZRot3(float x, float y, float radAngle);
+		// float
+		float yCoordofXRot3f(float y, float z, float radAngle);
+
+		float zCoordofXRot3f(float y, float z, float radAngle);
+
+		float xCoordofYRot3f(float x, float z, float a);
+
+		float zCoordofYRot3f(float x, float z, float a);
+
+		float xCoordofZRot3f(float x, float y, float radAngle);
+
+		float yCoordofZRot3f(float x, float y, float radAngle);
 
 	private:
 		CUSTOMVERTEX* vertices;

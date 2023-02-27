@@ -15,6 +15,7 @@
 
 
 using namespace DirectX;
+using namespace DirectX::DXTKXAML12;
 
 namespace
 {
@@ -99,7 +100,7 @@ void EffectPipelineStateDescription::CreatePipelineState(
     HRESULT hr = device->CreateGraphicsPipelineState(
         &psoDesc,
         IID_GRAPHICS_PPV_ARGS(pPipelineState));
-
+    
     if (FAILED(hr))
     { 
         DebugTrace("ERROR: CreatePipelineState failed to create a PSO. Enable the Direct3D Debug Layer for more information (%08X)\n", hr);
