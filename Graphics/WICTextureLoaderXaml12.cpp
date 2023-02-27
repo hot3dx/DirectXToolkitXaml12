@@ -35,6 +35,7 @@ namespace DirectX
 }
 
 using namespace DirectX;
+using namespace DirectX::DXTKXAML12;
 using Microsoft::WRL::ComPtr;
 
 namespace
@@ -565,7 +566,7 @@ namespace
 
 //--------------------------------------------------------------------------------------
 _Use_decl_annotations_
-HRESULT DirectX::LoadWICTextureFromMemory(
+HRESULT DirectX::DXTKXAML12::LoadWICTextureFromMemory(
     ID3D12Device* d3dDevice,
     const uint8_t* wicData,
     size_t wicDataSize,
@@ -587,7 +588,7 @@ HRESULT DirectX::LoadWICTextureFromMemory(
 }
 
 _Use_decl_annotations_
-HRESULT DirectX::CreateWICTextureFromMemory(
+HRESULT DirectX::DXTKXAML12::CreateWICTextureFromMemory(
     ID3D12Device* d3dDevice,
     ResourceUploadBatch& resourceUpload,
     const uint8_t* wicData,
@@ -610,7 +611,7 @@ HRESULT DirectX::CreateWICTextureFromMemory(
 
 //--------------------------------------------------------------------------------------
 _Use_decl_annotations_
-HRESULT DirectX::LoadWICTextureFromMemoryEx(
+HRESULT DirectX::DXTKXAML12::LoadWICTextureFromMemoryEx(
     ID3D12Device* d3dDevice,
     const uint8_t* wicData,
     size_t wicDataSize,
@@ -674,7 +675,7 @@ HRESULT DirectX::LoadWICTextureFromMemoryEx(
 }
 
 _Use_decl_annotations_
-HRESULT DirectX::CreateWICTextureFromMemoryEx(
+HRESULT DirectX::DXTKXAML12::CreateWICTextureFromMemoryEx(
     ID3D12Device* d3dDevice,
     ResourceUploadBatch& resourceUpload,
     const uint8_t* wicData,
@@ -770,7 +771,7 @@ HRESULT DirectX::CreateWICTextureFromMemoryEx(
 
 //--------------------------------------------------------------------------------------
 _Use_decl_annotations_
-HRESULT DirectX::LoadWICTextureFromFile(
+HRESULT DirectX::DXTKXAML12::LoadWICTextureFromFile(
     ID3D12Device* d3dDevice,
     const wchar_t* fileName,
     ID3D12Resource** texture,
@@ -790,7 +791,7 @@ HRESULT DirectX::LoadWICTextureFromFile(
 }
 
 _Use_decl_annotations_
-HRESULT DirectX::CreateWICTextureFromFile(
+HRESULT DirectX::DXTKXAML12::CreateWICTextureFromFile(
     ID3D12Device* d3dDevice,
     ResourceUploadBatch& resourceUpload,
     const wchar_t* fileName,
@@ -811,7 +812,7 @@ HRESULT DirectX::CreateWICTextureFromFile(
 
 //--------------------------------------------------------------------------------------
 _Use_decl_annotations_
-HRESULT DirectX::LoadWICTextureFromFileEx(
+HRESULT DirectX::DXTKXAML12::LoadWICTextureFromFileEx(
     ID3D12Device* d3dDevice,
     const wchar_t* fileName,
     size_t maxsize,
@@ -861,7 +862,7 @@ HRESULT DirectX::LoadWICTextureFromFileEx(
 }
 
 _Use_decl_annotations_
-HRESULT DirectX::CreateWICTextureFromFileEx(
+HRESULT DirectX::DXTKXAML12::CreateWICTextureFromFileEx(
     ID3D12Device* d3dDevice,
     ResourceUploadBatch& resourceUpload,
     const wchar_t* fileName,

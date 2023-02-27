@@ -20,6 +20,7 @@
 #include "vboXaml12.h"
 
 using namespace DirectX;
+using namespace DirectX::DXTKXAML12; 
 using Microsoft::WRL::ComPtr;
 
 static_assert(sizeof(VertexPositionNormalTexture) == 32, "VBO vertex size mismatch");
@@ -47,7 +48,7 @@ namespace
 
 //--------------------------------------------------------------------------------------
 _Use_decl_annotations_
-std::unique_ptr<Model> DirectX::Model::CreateFromVBO(const uint8_t* meshData, size_t dataSize, ID3D12Device* device)
+std::unique_ptr<Model> DirectX::DXTKXAML12::Model::CreateFromVBO(const uint8_t* meshData, size_t dataSize, ID3D12Device* device)
 {
     if (!InitOnceExecuteOnce(&g_InitOnce, InitializeDecl, nullptr, nullptr))
         throw std::exception("One-time initialization failed");
@@ -56,9 +57,9 @@ std::unique_ptr<Model> DirectX::Model::CreateFromVBO(const uint8_t* meshData, si
         throw std::exception("meshData cannot be null");
 
     // File Header
-    if (dataSize < sizeof(VBO::header_t))
+    if (dataSize < sizeof(VBO::DXTKXAML12::header_t))
         throw std::exception("End of file");
-    auto header = reinterpret_cast<const VBO::header_t*>(meshData);
+    auto header = reinterpret_cast<const VBO::DXTKXAML12::header_t*>(meshData);
 
     if (!header->numVertices || !header->numIndices)
         throw std::exception("No vertices or indices found");
@@ -69,9 +70,9 @@ std::unique_ptr<Model> DirectX::Model::CreateFromVBO(const uint8_t* meshData, si
 
     auto vertSize = static_cast<size_t>(sizeInBytes);
 
-    if (dataSize < (vertSize + sizeof(VBO::header_t)))
+    if (dataSize < (vertSize + sizeof(VBO::DXTKXAML12::header_t)))
         throw std::exception("End of file");
-    auto verts = reinterpret_cast<const VertexPositionNormalTexture*>(meshData + sizeof(VBO::header_t));
+    auto verts = reinterpret_cast<const VertexPositionNormalTexture*>(meshData + sizeof(VBO::DXTKXAML12::header_t));
 
     sizeInBytes = uint64_t(header->numIndices) * sizeof(uint16_t);
     if (sizeInBytes > uint64_t(D3D12_REQ_RESOURCE_SIZE_IN_MEGABYTES_EXPRESSION_A_TERM * 1024u * 1024u))
@@ -79,9 +80,9 @@ std::unique_ptr<Model> DirectX::Model::CreateFromVBO(const uint8_t* meshData, si
 
     auto indexSize = static_cast<size_t>(sizeInBytes);
 
-    if (dataSize < (sizeof(VBO::header_t) + vertSize + indexSize))
+    if (dataSize < (sizeof(VBO::DXTKXAML12::header_t) + vertSize + indexSize))
         throw std::exception("End of file");
-    auto indices = reinterpret_cast<const uint16_t*>(meshData + sizeof(VBO::header_t) + vertSize);
+    auto indices = reinterpret_cast<const uint16_t*>(meshData + sizeof(VBO::DXTKXAML12::header_t) + vertSize);
 
     // Create vertex buffer
     auto vb = GraphicsMemory::Get(device).Allocate(vertSize);
@@ -117,7 +118,7 @@ std::unique_ptr<Model> DirectX::Model::CreateFromVBO(const uint8_t* meshData, si
 
 //--------------------------------------------------------------------------------------
 _Use_decl_annotations_
-std::unique_ptr<Model> DirectX::Model::CreateFromVBO(const wchar_t* szFileName, ID3D12Device* device)
+std::unique_ptr<Model> DirectX::DXTKXAML12::Model::CreateFromVBO(const wchar_t* szFileName, ID3D12Device* device)
 {
     size_t dataSize = 0;
     std::unique_ptr<uint8_t[]> data;

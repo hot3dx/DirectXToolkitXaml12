@@ -13,7 +13,8 @@
 #include "SimpleMathXaml12.h"
 
 using namespace DirectX;
-using namespace DirectX::SimpleMath;
+using namespace DirectX::DXTKXAML12;
+using namespace DirectX::DXTKXAML12::SimpleMath;
 
 /****************************************************************************
 *
@@ -51,7 +52,7 @@ inline void Rectangle::Inflate(long horizAmount, long vertAmount)
 // Static functions
 //------------------------------------------------------------------------------
 
-inline Rectangle Rectangle::Intersect(const Rectangle& ra, const Rectangle& rb)
+inline DirectX::DXTKXAML12::SimpleMath::Rectangle DirectX::DXTKXAML12::SimpleMath::Rectangle::Intersect(const DirectX::DXTKXAML12::SimpleMath::Rectangle& ra, const DirectX::DXTKXAML12::SimpleMath::Rectangle& rb)
 {
     long righta = ra.x + ra.width;
     long rightb = rb.x + rb.width;
@@ -113,7 +114,7 @@ inline RECT Rectangle::Intersect(const RECT& rcta, const RECT& rctb)
     return result;
 }
 
-inline Rectangle Rectangle::Union(const Rectangle& ra, const Rectangle& rb)
+inline DirectX::DXTKXAML12::SimpleMath::Rectangle Rectangle::Union(const DirectX::DXTKXAML12::SimpleMath::Rectangle& ra, const DirectX::DXTKXAML12::SimpleMath::Rectangle& rb)
 {
     long righta = ra.x + ra.width;
     long rightb = rb.x + rb.width;
@@ -127,7 +128,7 @@ inline Rectangle Rectangle::Union(const Rectangle& ra, const Rectangle& rb)
     int maxRight = righta > rightb ? righta : rightb;
     int maxBottom = bottoma > bottomb ? bottoma : bottomb;
 
-    Rectangle result;
+    DirectX::DXTKXAML12::SimpleMath::Rectangle result;
     result.x = minX;
     result.y = minY;
     result.width = maxRight - minX;
@@ -135,7 +136,7 @@ inline Rectangle Rectangle::Union(const Rectangle& ra, const Rectangle& rb)
     return result;
 }
 
-inline RECT Rectangle::Union(const RECT& rcta, const RECT& rctb)
+inline RECT DirectX::DXTKXAML12::SimpleMath::Rectangle::Union(const RECT& rcta, const RECT& rctb)
 {
     RECT result;
     result.left = rcta.left < rctb.left ? rcta.left : rctb.left;

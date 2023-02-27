@@ -21,6 +21,7 @@
 
 using namespace DirectX;
 using namespace std;
+using namespace DirectX::DXTKXAML12;
 using Microsoft::WRL::ComPtr;
 
 namespace
@@ -817,7 +818,7 @@ void SpriteBatch::Impl::RenderBatch(D3D12_GPU_DESCRIPTOR_HANDLE texture, XMVECTO
         }
 
         // Set the vertex buffer view
-        D3D12_VERTEX_BUFFER_VIEW vbv;
+        D3D12_VERTEX_BUFFER_VIEW vbv{};
         size_t spriteVertexTotalSize = sizeof(VertexPositionColorTexture) * VerticesPerSprite;
         vbv.BufferLocation = mVertexSegment.GpuAddress() + (UINT64(mSpriteCount) * UINT64(spriteVertexTotalSize));
         vbv.StrideInBytes = sizeof(VertexPositionColorTexture);

@@ -14,7 +14,8 @@
 #include "GraphicsMemoryXaml12.h"
 
 using namespace DirectX;
-using namespace DirectX::Internal;
+using namespace DirectX::DXTKXAML12;
+using namespace DirectX::DXTKXAML12::Internal;
 using Microsoft::WRL::ComPtr;
 
 
@@ -213,7 +214,7 @@ void PrimitiveBatchBase::Impl::FlushBatch()
     mCommandList->IASetPrimitiveTopology(mCurrentTopology);
 
     // Set the vertex buffer view
-    D3D12_VERTEX_BUFFER_VIEW vbv;
+    D3D12_VERTEX_BUFFER_VIEW vbv{};
     vbv.BufferLocation = mVertexSegment.GpuAddress();
     vbv.SizeInBytes = static_cast<UINT>(mVertexSize * (mVertexCount - mBaseVertex));
     vbv.StrideInBytes = static_cast<UINT>(mVertexSize);
@@ -222,7 +223,7 @@ void PrimitiveBatchBase::Impl::FlushBatch()
     if (mCurrentlyIndexed)
     {
         // Set the index buffer view
-        D3D12_INDEX_BUFFER_VIEW ibv;
+        D3D12_INDEX_BUFFER_VIEW ibv{};
         ibv.BufferLocation = mIndexSegment.GpuAddress();
         ibv.Format = DXGI_FORMAT_R16_UINT;
         ibv.SizeInBytes = static_cast<UINT>(mIndexCount - mBaseIndex) * sizeof(uint16_t);

@@ -11,6 +11,7 @@
 #include "VertexTypesXaml12.h"
 
 using namespace DirectX;
+using namespace DirectX::DXTKXAML12;
 
 //--------------------------------------------------------------------------------------
 // Vertex struct holding position information.
@@ -76,6 +77,7 @@ const D3D12_INPUT_LAYOUT_DESC VertexPositionDualTexture::InputLayout =
     VertexPositionDualTexture::InputElementCount
 };
 
+
 //--------------------------------------------------------------------------------------
 // Vertex struct holding position and normal vector.
 const D3D12_INPUT_ELEMENT_DESC VertexPositionNormal::InputElements[] =
@@ -86,6 +88,11 @@ const D3D12_INPUT_ELEMENT_DESC VertexPositionNormal::InputElements[] =
 
 static_assert(sizeof(VertexPositionNormal) == 24, "Vertex struct/layout mismatch");
 
+const D3D12_INPUT_LAYOUT_DESC VertexPositionNormal::InputLayout =
+{
+    VertexPositionNormal::InputElements,
+    VertexPositionNormal::InputElementCount
+};
 
 //--------------------------------------------------------------------------------------
 // Vertex struct holding position, color, and texture mapping information.
@@ -157,6 +164,9 @@ const D3D12_INPUT_LAYOUT_DESC VertexPositionNormalColorTexture::InputLayout =
     VertexPositionNormalColorTexture::InputElementCount
 };
 
+
 //--------------------------------------------------------------------------------------
 // VertexPositionNormalTangentColorTexture, VertexPositionNormalTangentColorTextureSkinning are not
 // supported for DirectX 12 since they were only present for DGSL
+
+

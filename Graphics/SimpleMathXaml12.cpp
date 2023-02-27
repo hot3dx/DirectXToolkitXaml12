@@ -16,45 +16,48 @@
  * Constants
  *
  ****************************************************************************/
+using namespace DirectX::DXTKXAML12;
 
 namespace DirectX
 {
-    namespace SimpleMath
+    namespace DXTKXAML12
     {
-        const Vector2 Vector2::Zero = { 0.f, 0.f };
-        const Vector2 Vector2::One = { 1.f, 1.f };
-        const Vector2 Vector2::UnitX = { 1.f, 0.f };
-        const Vector2 Vector2::UnitY = { 0.f, 1.f };
 
-        const Vector3 Vector3::Zero = { 0.f, 0.f, 0.f };
-        const Vector3 Vector3::One = { 1.f, 1.f, 1.f };
-        const Vector3 Vector3::UnitX = { 1.f, 0.f, 0.f };
-        const Vector3 Vector3::UnitY = { 0.f, 1.f, 0.f };
-        const Vector3 Vector3::UnitZ = { 0.f, 0.f, 1.f };
-        const Vector3 Vector3::Up = { 0.f, 1.f, 0.f };
-        const Vector3 Vector3::Down = { 0.f, -1.f, 0.f };
-        const Vector3 Vector3::Right = { 1.f, 0.f, 0.f };
-        const Vector3 Vector3::Left = { -1.f, 0.f, 0.f };
-        const Vector3 Vector3::Forward = { 0.f, 0.f, -1.f };
-        const Vector3 Vector3::Backward = { 0.f, 0.f, 1.f };
+        namespace SimpleMath
+        {
+            const Vector2 Vector2::Zero = { 0.f, 0.f };
+            const Vector2 Vector2::One = { 1.f, 1.f };
+            const Vector2 Vector2::UnitX = { 1.f, 0.f };
+            const Vector2 Vector2::UnitY = { 0.f, 1.f };
 
-        const Vector4 Vector4::Zero = { 0.f, 0.f, 0.f, 0.f };
-        const Vector4 Vector4::One = { 1.f, 1.f, 1.f, 1.f };
-        const Vector4 Vector4::UnitX = { 1.f, 0.f, 0.f, 0.f };
-        const Vector4 Vector4::UnitY = { 0.f, 1.f, 0.f, 0.f };
-        const Vector4 Vector4::UnitZ = { 0.f, 0.f, 1.f, 0.f };
-        const Vector4 Vector4::UnitW = { 0.f, 0.f, 0.f, 1.f };
+            const Vector3 Vector3::Zero = { 0.f, 0.f, 0.f };
+            const Vector3 Vector3::One = { 1.f, 1.f, 1.f };
+            const Vector3 Vector3::UnitX = { 1.f, 0.f, 0.f };
+            const Vector3 Vector3::UnitY = { 0.f, 1.f, 0.f };
+            const Vector3 Vector3::UnitZ = { 0.f, 0.f, 1.f };
+            const Vector3 Vector3::Up = { 0.f, 1.f, 0.f };
+            const Vector3 Vector3::Down = { 0.f, -1.f, 0.f };
+            const Vector3 Vector3::Right = { 1.f, 0.f, 0.f };
+            const Vector3 Vector3::Left = { -1.f, 0.f, 0.f };
+            const Vector3 Vector3::Forward = { 0.f, 0.f, -1.f };
+            const Vector3 Vector3::Backward = { 0.f, 0.f, 1.f };
 
-        const Matrix Matrix::Identity = { 1.f, 0.f, 0.f, 0.f,
-                                          0.f, 1.f, 0.f, 0.f,
-                                          0.f, 0.f, 1.f, 0.f,
-                                          0.f, 0.f, 0.f, 1.f };
+            const Vector4 Vector4::Zero = { 0.f, 0.f, 0.f, 0.f };
+            const Vector4 Vector4::One = { 1.f, 1.f, 1.f, 1.f };
+            const Vector4 Vector4::UnitX = { 1.f, 0.f, 0.f, 0.f };
+            const Vector4 Vector4::UnitY = { 0.f, 1.f, 0.f, 0.f };
+            const Vector4 Vector4::UnitZ = { 0.f, 0.f, 1.f, 0.f };
+            const Vector4 Vector4::UnitW = { 0.f, 0.f, 0.f, 1.f };
 
-        const Quaternion Quaternion::Identity = { 0.f, 0.f, 0.f, 1.f };
+            const Matrix Matrix::Identity = { 1.f, 0.f, 0.f, 0.f,
+                                              0.f, 1.f, 0.f, 0.f,
+                                              0.f, 0.f, 1.f, 0.f,
+                                              0.f, 0.f, 0.f, 1.f };
+
+            const Quaternion Quaternion::Identity = { 0.f, 0.f, 0.f, 1.f };
+        }
     }
 }
-
-
 /****************************************************************************
  *
  * Viewport
@@ -62,26 +65,26 @@ namespace DirectX
  ****************************************************************************/
 
 #if defined(__d3d11_h__) || defined(__d3d11_x_h__)
-static_assert(sizeof(DirectX::SimpleMath::Viewport) == sizeof(D3D11_VIEWPORT), "Size mismatch");
-static_assert(offsetof(DirectX::SimpleMath::Viewport, x) == offsetof(D3D11_VIEWPORT, TopLeftX), "Layout mismatch");
-static_assert(offsetof(DirectX::SimpleMath::Viewport, y) == offsetof(D3D11_VIEWPORT, TopLeftY), "Layout mismatch");
-static_assert(offsetof(DirectX::SimpleMath::Viewport, width) == offsetof(D3D11_VIEWPORT, Width), "Layout mismatch");
-static_assert(offsetof(DirectX::SimpleMath::Viewport, height) == offsetof(D3D11_VIEWPORT, Height), "Layout mismatch");
-static_assert(offsetof(DirectX::SimpleMath::Viewport, minDepth) == offsetof(D3D11_VIEWPORT, MinDepth), "Layout mismatch");
-static_assert(offsetof(DirectX::SimpleMath::Viewport, maxDepth) == offsetof(D3D11_VIEWPORT, MaxDepth), "Layout mismatch");
+static_assert(sizeof(DirectX::DXTKXAML12::SimpleMath::Viewport) == sizeof(D3D11_VIEWPORT), "Size mismatch");
+static_assert(offsetof(DirectX::DXTKXAML12::SimpleMath::Viewport, x) == offsetof(D3D11_VIEWPORT, TopLeftX), "Layout mismatch");
+static_assert(offsetof(DirectX::DXTKXAML12::SimpleMath::Viewport, y) == offsetof(D3D11_VIEWPORT, TopLeftY), "Layout mismatch");
+static_assert(offsetof(DirectX::DXTKXAML12::SimpleMath::Viewport, width) == offsetof(D3D11_VIEWPORT, Width), "Layout mismatch");
+static_assert(offsetof(DirectX::DXTKXAML12::SimpleMath::Viewport, height) == offsetof(D3D11_VIEWPORT, Height), "Layout mismatch");
+static_assert(offsetof(DirectX::DXTKXAML12::SimpleMath::Viewport, minDepth) == offsetof(D3D11_VIEWPORT, MinDepth), "Layout mismatch");
+static_assert(offsetof(DirectX::DXTKXAML12::SimpleMath::Viewport, maxDepth) == offsetof(D3D11_VIEWPORT, MaxDepth), "Layout mismatch");
 #endif
 
 #if defined(__d3d12_h__) || defined(__d3d12_x_h__)
-static_assert(sizeof(DirectX::SimpleMath::Viewport) == sizeof(D3D12_VIEWPORT), "Size mismatch");
-static_assert(offsetof(DirectX::SimpleMath::Viewport, x) == offsetof(D3D12_VIEWPORT, TopLeftX), "Layout mismatch");
-static_assert(offsetof(DirectX::SimpleMath::Viewport, y) == offsetof(D3D12_VIEWPORT, TopLeftY), "Layout mismatch");
-static_assert(offsetof(DirectX::SimpleMath::Viewport, width) == offsetof(D3D12_VIEWPORT, Width), "Layout mismatch");
-static_assert(offsetof(DirectX::SimpleMath::Viewport, height) == offsetof(D3D12_VIEWPORT, Height), "Layout mismatch");
-static_assert(offsetof(DirectX::SimpleMath::Viewport, minDepth) == offsetof(D3D12_VIEWPORT, MinDepth), "Layout mismatch");
-static_assert(offsetof(DirectX::SimpleMath::Viewport, maxDepth) == offsetof(D3D12_VIEWPORT, MaxDepth), "Layout mismatch");
+static_assert(sizeof(DirectX::DXTKXAML12::SimpleMath::Viewport) == sizeof(D3D12_VIEWPORT), "Size mismatch");
+static_assert(offsetof(DirectX::DXTKXAML12::SimpleMath::Viewport, x) == offsetof(D3D12_VIEWPORT, TopLeftX), "Layout mismatch");
+static_assert(offsetof(DirectX::DXTKXAML12::SimpleMath::Viewport, y) == offsetof(D3D12_VIEWPORT, TopLeftY), "Layout mismatch");
+static_assert(offsetof(DirectX::DXTKXAML12::SimpleMath::Viewport, width) == offsetof(D3D12_VIEWPORT, Width), "Layout mismatch");
+static_assert(offsetof(DirectX::DXTKXAML12::SimpleMath::Viewport, height) == offsetof(D3D12_VIEWPORT, Height), "Layout mismatch");
+static_assert(offsetof(DirectX::DXTKXAML12::SimpleMath::Viewport, minDepth) == offsetof(D3D12_VIEWPORT, MinDepth), "Layout mismatch");
+static_assert(offsetof(DirectX::DXTKXAML12::SimpleMath::Viewport, maxDepth) == offsetof(D3D12_VIEWPORT, MaxDepth), "Layout mismatch");
 #endif
 
-RECT DirectX::SimpleMath::Viewport::ComputeDisplayArea(DXGI_SCALING scaling, UINT backBufferWidth, UINT backBufferHeight, int outputWidth, int outputHeight)
+RECT DirectX::DXTKXAML12::SimpleMath::Viewport::ComputeDisplayArea(DXGI_SCALING scaling, UINT backBufferWidth, UINT backBufferHeight, int outputWidth, int outputHeight)
 {
     RECT rct;
 
@@ -141,7 +144,7 @@ RECT DirectX::SimpleMath::Viewport::ComputeDisplayArea(DXGI_SCALING scaling, UIN
     return rct;
 }
 
-RECT DirectX::SimpleMath::Viewport::ComputeTitleSafeArea(UINT backBufferWidth, UINT backBufferHeight)
+RECT DirectX::DXTKXAML12::SimpleMath::Viewport::ComputeTitleSafeArea(UINT backBufferWidth, UINT backBufferHeight)
 {
     float safew = (float(backBufferWidth) + 19.f) / 20.f;
     float safeh = (float(backBufferHeight) + 19.f) / 20.f;

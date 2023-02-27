@@ -17,6 +17,7 @@
 #include <ppltasks.h>
 
 using namespace DirectX;
+using namespace DirectX::DXTKXAML12;
 using Microsoft::WRL::ComPtr;
 using namespace Windows::Foundation;
 using namespace Concurrency;
@@ -794,7 +795,7 @@ private:
             mList->SetComputeRootDescriptorTable(GenerateMipsResources::TargetTexture, uavH);
 
             // Set constants
-            GenerateMipsResources::ConstantData constants;
+            GenerateMipsResources::ConstantData constants{};
             constants.SrcMipIndex = mip - 1;
             constants.InvOutTexelSize = XMFLOAT2(1 / float(mipWidth), 1 / float(mipHeight));
             mList->SetComputeRoot32BitConstants(
@@ -1080,7 +1081,7 @@ void ResourceUploadBatch::Begin()
     pImpl->Begin();
 }
 
-void __cdecl DirectX::ResourceUploadBatch::BeginXaml()
+void __cdecl DirectX::DXTKXAML12::ResourceUploadBatch::BeginXaml()
 {
     pImpl->Begin();
 }
@@ -1129,17 +1130,17 @@ std::future<void> ResourceUploadBatch::End(_In_ ID3D12CommandQueue* commandQueue
     return pImpl->End(commandQueue);
 }
 
-Concurrency::task<void> DirectX::ResourceUploadBatch::EndXaml(ID3D12CommandQueue* commandQueue)
+Concurrency::task<void> DirectX::DXTKXAML12::ResourceUploadBatch::EndXaml(ID3D12CommandQueue* commandQueue)
 {
 	return pImpl->EndXaml(commandQueue);
 }
 
-void _cdecl DirectX::ResourceUploadBatch::SetGPUHandle(HANDLE handle)
+void _cdecl DirectX::DXTKXAML12::ResourceUploadBatch::SetGPUHandle(HANDLE handle)
 {
     pImpl->SetGPUHandle(handle);
 }
 
-HANDLE _cdecl DirectX::ResourceUploadBatch::GetGPUHandle()
+HANDLE _cdecl DirectX::DXTKXAML12::ResourceUploadBatch::GetGPUHandle()
 {
     return pImpl->GetGPUHandle();
 }
