@@ -17,7 +17,7 @@
 #pragma once
 
 
-#include "Graphics\d3dx12.h"
+#include "d3dx12.h"
 #include <d3d12.h>
 #include <DirectXMath.h>
 
@@ -26,6 +26,7 @@
 #include <vector>
 
 #include <wrl/client.h>
+#pragma comment(lib,"dxguid.lib")
 
 #ifndef IID_GRAPHICS_PPV_ARGS
 #define IID_GRAPHICS_PPV_ARGS(x) IID_PPV_ARGS(x)
