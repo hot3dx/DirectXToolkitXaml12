@@ -67,8 +67,8 @@ namespace DirectX
         const wchar_t* fileName, 
         D3D12_RESOURCE_STATES beforeState, 
         D3D12_RESOURCE_STATES afterState) noexcept;
-
-    HRESULT __cdecl SaveWICTextureToFile(
+    
+     HRESULT __cdecl SaveWICTextureToFile(
         _In_ ID3D12CommandQueue* pCommandQ,
         _In_ ID3D12Resource* pSource,
         REFGUID guidContainerFormat,
@@ -79,3 +79,4 @@ namespace DirectX
         _In_opt_ std::function<void __cdecl(IPropertyBag2*)> setCustomProps = nullptr,
         bool forceSRGB = false);
 }
+  
