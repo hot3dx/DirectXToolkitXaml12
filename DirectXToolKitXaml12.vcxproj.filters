@@ -176,7 +176,7 @@
     <ClInclude Include="targetver.h">
       <Filter>Audio</Filter>
     </ClInclude>
-    <ClInclude Include="DirectXToolKitXaml12 .h" />
+    <ClInclude Include="..\DXToolkitXAML12\DirectXToolKitXaml12.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Audio\AudioEngineXaml12.cpp">
@@ -1221,5 +1221,6 @@
     <None Include="Graphics\Shaders\ToneMap.fx">
       <Filter>Graphics\Shaders</Filter>
     </None>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

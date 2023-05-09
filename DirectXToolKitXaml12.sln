@@ -11,6 +11,7 @@ Global
 		Debug|x86 = Debug|x86
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
+		Description = Quickly enables DirectX 12 in Xaml applications
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{269BDC1C-57A9-4609-9138-55F795A4D0AB}.Debug|x64.ActiveCfg = Debug|x64

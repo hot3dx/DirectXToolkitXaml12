@@ -99,7 +99,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>windowscodecs.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <Lib>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories); $(VCInstallDir)\lib\store\amd64; $(VCInstallDir)\lib\amd64</AdditionalLibraryDirectories>
@@ -108,10 +108,12 @@
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <Lib>
-      <TargetMachine />
+      <TargetMachine>MachineX86</TargetMachine>
     </Lib>
     <Lib>
       <AdditionalOptions>/IGNORE:4264 /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.34.31933\lib\x86\store\references\platform.winmd" </AdditionalOptions>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <Name>DirectXToolKitXaml12</Name>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -150,7 +152,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>windowscodecs.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <Lib>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories); $(VCInstallDir)\lib\store\amd64; $(VCInstallDir)\lib\amd64</AdditionalLibraryDirectories>
@@ -159,13 +161,15 @@
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <Lib>
-      <TargetMachine />
+      <TargetMachine>MachineX86</TargetMachine>
     </Lib>
     <Lib>
       <LinkTimeCodeGeneration />
     </Lib>
     <Lib>
       <AdditionalOptions>/IGNORE:4264 /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.34.31933\lib\x86\store\references\platform.winmd" </AdditionalOptions>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <Name>DirectXToolKitXaml12</Name>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -194,7 +198,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>windowscodecs.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <Lib>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);$(VCInstallDir)\lib\store\amd64;$(VCInstallDir)\lib\amd64</AdditionalLibraryDirectories>
@@ -203,10 +207,12 @@
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <Lib>
-      <TargetMachine />
+      <TargetMachine>MachineX64</TargetMachine>
     </Lib>
     <Lib>
       <AdditionalOptions>/IGNORE:4264 /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.34.31933\lib\x86\store\references\platform.winmd" </AdditionalOptions>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <Name>DirectXToolKitXaml12</Name>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -243,7 +249,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>windowscodecs.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <Lib>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories); $(VCInstallDir)\lib\store\amd64; $(VCInstallDir)\lib\amd64</AdditionalLibraryDirectories>
@@ -252,16 +258,19 @@
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <Lib>
-      <TargetMachine />
+      <TargetMachine>MachineX64</TargetMachine>
     </Lib>
     <Lib>
       <LinkTimeCodeGeneration />
     </Lib>
     <Lib>
       <AdditionalOptions>/IGNORE:4264 /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.34.31933\lib\x86\store\references\platform.winmd" </AdditionalOptions>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <Name>DirectXToolKitXaml12</Name>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\DXToolkitXAML12\DirectXToolKitXaml12.h" />
     <ClInclude Include="Audio\AudioFileReaderXaml12.h" />
     <ClInclude Include="Audio\AudioXaml12.h" />
     <ClInclude Include="Audio\AudioXaml12_22.h" />
@@ -312,7 +321,6 @@
     <ClInclude Include="Graphics\VertexTypesXaml12.h" />
     <ClInclude Include="Graphics\WICTextureLoaderXaml12.h" />
     <ClInclude Include="Graphics\XboxDDSTextureLoaderXaml12.h" />
-    <ClInclude Include="DirectXToolKitXaml12 .h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -383,6 +391,7 @@
     <Image Include="Assets\App1-DirectXToolKitXaml12-Sample-App.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram.cd" />
     <None Include="Graphics\Shaders\AlphaTestEffect.fx">
       <FileType>Document</FileType>
     </None>
