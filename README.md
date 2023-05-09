@@ -4,6 +4,12 @@
 
 ![App1 Example Screenshot](https://github.com/hot3dx/DirectXToolkitXaml12/blob/master/Assets/App1-DirectXToolKitXaml12-Sample-App.png)
 
+05-09-2023 Generated Files Folder removed. It caused conflicts with every directX 12 Xaml12 program
+there are assorted other fixes including Release and Debug X64 and Win32 Compiling and linking perfection.
+You should delete prior installations of this library
+Although this is a Windows 11 release, it can be rolled back to Windows 10, Version 22H2 and perhaps to ... by retargeting
+ScreenGrab. Now works for DDS, BMP, PNG, JPG, TIFF, GIF see ScreenGrabReadmeExample
+
 //////////////////////////////////////////
 2-26-23 Generated Files Folder removed. It caused conflicts with every directX 12 Xaml12 program
 there are assorted other fixes including Release and Debug X64 and Win32 Compiling and linking perfection.
