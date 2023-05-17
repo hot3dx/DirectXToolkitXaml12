@@ -57,9 +57,13 @@ Mouse.h & .cpp
 Keyboard.h & .cpp
 were removed 8/18/20 replaced with DirectXPage.xaml.h and .cpp code
 
-# Bitcoin Donations Accepted!
+# Bitcoin and Donations Accepted!
 
 BTC 32HVJHEXh9bMLVkmoSE1d389q2Q1YvfrNE
+
+
+Steem
+@jeff-kubitz
 
 By: Jeff Kubitz
 ![Ico](https://github.com/hot3dx/AppXamlDX12/blob/master/Assets/AutoDraw2.ico)
