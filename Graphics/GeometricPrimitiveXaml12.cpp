@@ -649,7 +649,7 @@ std::unique_ptr<GeometricPrimitive> GeometricPrimitive::CreateCustom(
     {
         if (*it >= nVerts)
         {
-            throw std::exception("Index not in vertices list");
+           throw std::exception("Index not in vertices list");
         }
     }
     // Create the primitive object.

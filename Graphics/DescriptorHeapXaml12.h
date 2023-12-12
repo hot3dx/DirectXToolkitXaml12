@@ -9,7 +9,7 @@
 
 #pragma once
 
-#include "Graphics\d3dx12.h"
+#include "d3dx12.h"
 #include <d3d12.h>
 
 #include <stdexcept>
@@ -88,7 +88,7 @@ namespace DirectX
                 }
                 assert(m_desc.Flags & D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE);
 
-                D3D12_GPU_DESCRIPTOR_HANDLE handle;
+                D3D12_GPU_DESCRIPTOR_HANDLE handle{};
                 handle.ptr = m_hGPU.ptr + UINT64(index) * UINT64(m_increment);
                 return handle;
             }
@@ -101,7 +101,7 @@ namespace DirectX
                     throw std::out_of_range("D3DX12_CPU_DESCRIPTOR_HANDLE");
                 }
 
-                D3D12_CPU_DESCRIPTOR_HANDLE handle;
+                D3D12_CPU_DESCRIPTOR_HANDLE handle{};
                 handle.ptr = static_cast<SIZE_T>(m_hCPU.ptr + UINT64(index) * UINT64(m_increment));
                 return handle;
 

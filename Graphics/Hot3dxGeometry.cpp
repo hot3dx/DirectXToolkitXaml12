@@ -124,7 +124,7 @@ XMVECTOR Hot3dx::CHot3dxD3D12Geometry::CenterOfFace(CD3D9Face face)
 	for (int j = 1; j < fvCnt + 1; j++)
 	{
 		XMVECTOR n;
-		XMVECTOR v;
+		XMVECTOR v = {};
 		v = GetFaceVertex(face, j);
 		if (v.x < l.x)l.x = v.x;
 		if (v.y < l.y)l.y = v.y;
@@ -214,7 +214,7 @@ XMVECTOR XM_CALLCONV Hot3dx::CHot3dxD3D12Geometry::FindPointIntersectPlaneVec(XM
 /*
 XMVECTOR Hot3dx::CHot3dxD3D12Geometry::GetFaceVertex(CD3D9Face face, int id)
 {
-	XMVECTOR v;
+	XMVECTOR v = {};
 	switch (id) {
 	case 1:v = face.p1; break;
 	case 2:v = face.p2; break;

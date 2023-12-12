@@ -283,7 +283,7 @@ void DirectX::DXTKXAML12::ComputeSphere(VertexCollection& vertices, IndexCollect
         ReverseWinding(indices, vertices);
 
     if (invertn)
-        InvertNormals(vertices);
+        vertices;
 }
 
 
@@ -443,7 +443,7 @@ void DirectX::DXTKXAML12::ComputeGeoSphere(VertexCollection& vertices, IndexColl
     vertices.reserve(vertexPositions.size());
     for (auto it = vertexPositions.begin(); it != vertexPositions.end(); ++it)
     {
-        auto vertexValue = *it;
+        auto& vertexValue = *it;
 
         auto normal = XMVector3Normalize(XMLoadFloat3(&vertexValue));
         auto pos = XMVectorScale(normal, radius);
@@ -543,7 +543,7 @@ void DirectX::DXTKXAML12::ComputeGeoSphere(VertexCollection& vertices, IndexColl
     // poles, but reduce stretching.
     auto fixPole = [&](size_t poleIndex)
     {
-        auto poleVertex = vertices[poleIndex];
+        auto& poleVertex = vertices[poleIndex];
         bool overwrittenPoleVertex = false; // overwriting the original pole vertex saves us one vertex
 
         for (size_t i = 0; i < indices.size(); i += 3)
@@ -1203,7 +1203,7 @@ namespace
     void XM_CALLCONV TessellatePatch(DirectX::DXTKXAML12::VertexCollection& vertices, DirectX::DXTKXAML12::IndexCollection& indices, TeapotPatch const& patch, size_t tessellation, FXMVECTOR scale, bool isMirrored)
     {
         // Look up the 16 control points for this patch.
-        XMVECTOR controlPoints[16];
+        XMVECTOR controlPoints[16]{};
 
         for (int i = 0; i < 16; i++)
         {

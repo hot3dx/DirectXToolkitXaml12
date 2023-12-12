@@ -57,7 +57,7 @@ float* Hot3dx::Hot3dx12Rotate::CalculateMeshBoxAndCenterCV(CUSTOMVERTEX* v, int 
 	box[8] = box[4] + ((box[5] - box[4]) / 2);
 
 	wchar_t mybox[200] = {};
-	swprintf(mybox, 200, L"\n box center x: %f y: %f z: %f\n", box[6], box[7], box[8]);
+	swprintf_s(mybox, 200, L"\n box center x: %f y: %f z: %f\n", box[6], box[7], box[8]);
 #ifdef _DEBUG
 	OutputDebugString(mybox);
 #endif

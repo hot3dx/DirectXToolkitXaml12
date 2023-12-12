@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------------
 
 #include "pch.h"
-#include "Graphics\d3dx12.h"
+#include "d3dx12.h"
 #include "DirectXHelpersXaml12.h"
 #include "PlatformHelpersXaml12.h"
 #include "MyResourceUploadBatchXaml12.h"
