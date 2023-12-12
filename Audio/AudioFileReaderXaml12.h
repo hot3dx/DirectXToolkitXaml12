@@ -19,6 +19,7 @@
 class AudioFileReader
 {
 public:
+    AudioFileReader() {}
     virtual ~AudioFileReader() {}
     HRESULT Initialize(_In_ LPCWSTR filename);
 
