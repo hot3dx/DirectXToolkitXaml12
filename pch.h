@@ -18,14 +18,15 @@
 #include <dxgi1_5.h>
 #include <dxgi1_6.h>
 #include <d3d12.h>
-#include "Graphics/d3dx12.h"
+#include <Graphics/d3dx12.h>
 #include <d3d11_3.h>
 #include <d2d1_3.h>
 #include <d2d1effects_2.h>
 #include <dwrite_3.h>
 #include <wincodec.h>
 // Uses NuGet.org package WinPixEventRuntime 1.0.220810001
-#include <pix3.h>
+#include "packages\WinPixEventRuntime.1.0.230302001\Include\WinPixEventRuntime\pix3.h"
+
 #include <DirectXColors.h>
 #include <DirectXMath.h>
 #include <DirectXPackedVector.h>
@@ -50,22 +51,23 @@
 #include <memory>
 #include <mutex>
 #include <set>
-#include <string>
+//#include <string>
 #include <type_traits>
 #include <utility>
 #include <vector>
 
 #include <malloc.h>
 #include <stddef.h>
-#include <stdint.h>
-#include <stdio.h>
+#include <cstdint>
+#include <cstdio>
 #include <Audioclient.h>
 
 #define XAUDIO2_HELPER_FUNCTIONS 1
-#include <xaudio2.h>
-#include <xaudio2fx.h>
 #include <x3daudio.h>
+#include <xaudio2fx.h>
+#include <xaudio2.h>
 #include <xapo.h>
+#include <xapobase.h>
 #include <xapofx.h>
 #include <hrtfapoapi.h>
 

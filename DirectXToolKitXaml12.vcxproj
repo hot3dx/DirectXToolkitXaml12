@@ -73,6 +73,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -85,7 +93,7 @@
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <AdditionalIncludeDirectories>$(ProjectDir);$(IntDir)</AdditionalIncludeDirectories>
       <AdditionalOptions>/bigobj /JMC /Yu"pch.h" /MP /GS /analyze- /W3 /wd"4453"  /Zc:wchar_t /I"C:\DirectXToolKitXaml12" </AdditionalOptions>
-      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAsWinRT>true</CompileAsWinRT>
       <AssemblerOutput>All</AssemblerOutput>
       <DisableSpecificWarnings>4453;28024</DisableSpecificWarnings>
@@ -99,7 +107,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>windowscodecs.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <Lib>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories); $(VCInstallDir)\lib\store\amd64; $(VCInstallDir)\lib\amd64</AdditionalLibraryDirectories>
@@ -108,10 +116,12 @@
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <Lib>
-      <TargetMachine />
+      <TargetMachine>MachineX86</TargetMachine>
     </Lib>
     <Lib>
       <AdditionalOptions>/IGNORE:4264 /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.34.31933\lib\x86\store\references\platform.winmd" </AdditionalOptions>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <Name>DirectXToolKitXaml12</Name>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -137,7 +147,7 @@
       <Optimization>Disabled</Optimization>
       <SupportJustMyCode>true</SupportJustMyCode>
       <WholeProgramOptimization>false</WholeProgramOptimization>
-      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <BasicRuntimeChecks />
       <FloatingPointModel>Fast</FloatingPointModel>
       <ForcedUsingFiles>$(VCToolsInstallDir)lib\x86\store\references\platform.winmd;%(ForcedUsingFiles) </ForcedUsingFiles>
@@ -150,7 +160,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>windowscodecs.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <Lib>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories); $(VCInstallDir)\lib\store\amd64; $(VCInstallDir)\lib\amd64</AdditionalLibraryDirectories>
@@ -159,13 +169,15 @@
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <Lib>
-      <TargetMachine />
+      <TargetMachine>MachineX86</TargetMachine>
     </Lib>
     <Lib>
       <LinkTimeCodeGeneration />
     </Lib>
     <Lib>
       <AdditionalOptions>/IGNORE:4264 /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.34.31933\lib\x86\store\references\platform.winmd" </AdditionalOptions>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <Name>DirectXToolKitXaml12</Name>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -180,7 +192,7 @@
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <AdditionalOptions>/bigobj /JMC /Yu"pch.h" /MP /GS /analyze- /W3 /wd"4453"  /Zc:wchar_t /I"C:\DirectXToolKitXaml12" </AdditionalOptions>
       <AdditionalIncludeDirectories>$(ProjectDir);$(IntDir);</AdditionalIncludeDirectories>
-      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAsWinRT>true</CompileAsWinRT>
       <AssemblerOutput>NoListing</AssemblerOutput>
       <DisableSpecificWarnings>4453;28024</DisableSpecificWarnings>
@@ -194,7 +206,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>windowscodecs.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <Lib>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);$(VCInstallDir)\lib\store\amd64;$(VCInstallDir)\lib\amd64</AdditionalLibraryDirectories>
@@ -203,10 +215,12 @@
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <Lib>
-      <TargetMachine />
+      <TargetMachine>MachineX64</TargetMachine>
     </Lib>
     <Lib>
       <AdditionalOptions>/IGNORE:4264 /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.34.31933\lib\x86\store\references\platform.winmd" </AdditionalOptions>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <Name>DirectXToolKitXaml12</Name>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -243,7 +257,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>windowscodecs.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <Lib>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories); $(VCInstallDir)\lib\store\amd64; $(VCInstallDir)\lib\amd64</AdditionalLibraryDirectories>
@@ -252,16 +266,19 @@
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <Lib>
-      <TargetMachine />
+      <TargetMachine>MachineX64</TargetMachine>
     </Lib>
     <Lib>
       <LinkTimeCodeGeneration />
     </Lib>
     <Lib>
       <AdditionalOptions>/IGNORE:4264 /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.34.31933\lib\x86\store\references\platform.winmd" </AdditionalOptions>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <Name>DirectXToolKitXaml12</Name>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\DXToolkitXAML12\DirectXToolKitXaml12.h" />
     <ClInclude Include="Audio\AudioFileReaderXaml12.h" />
     <ClInclude Include="Audio\AudioXaml12.h" />
     <ClInclude Include="Audio\AudioXaml12_22.h" />
@@ -312,7 +329,6 @@
     <ClInclude Include="Graphics\VertexTypesXaml12.h" />
     <ClInclude Include="Graphics\WICTextureLoaderXaml12.h" />
     <ClInclude Include="Graphics\XboxDDSTextureLoaderXaml12.h" />
-    <ClInclude Include="DirectXToolKitXaml12 .h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -383,6 +399,7 @@
     <Image Include="Assets\App1-DirectXToolKitXaml12-Sample-App.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram.cd" />
     <None Include="Graphics\Shaders\AlphaTestEffect.fx">
       <FileType>Document</FileType>
     </None>
@@ -419,6 +436,7 @@
     <None Include="Graphics\Shaders\ToneMap.fx">
       <FileType>Document</FileType>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Graphics\Shaders\Common.fxh" />
@@ -699,16 +717,15 @@
     <None Include="Graphics\Shaders\Utilities.fxh" />
     <None Include="Graphics\SimpleMathXaml12.inl" />
     <None Include="Graphics\TeapotData.inc" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="packages\WinPixEventRuntime.1.0.220810001\build\WinPixEventRuntime.targets" Condition="Exists('packages\WinPixEventRuntime.1.0.220810001\build\WinPixEventRuntime.targets')" />
+    <Import Project="packages\WinPixEventRuntime.1.0.230302001\build\WinPixEventRuntime.targets" Condition="Exists('packages\WinPixEventRuntime.1.0.230302001\build\WinPixEventRuntime.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('packages\WinPixEventRuntime.1.0.220810001\build\WinPixEventRuntime.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\WinPixEventRuntime.1.0.220810001\build\WinPixEventRuntime.targets'))" />
+    <Error Condition="!Exists('packages\WinPixEventRuntime.1.0.230302001\build\WinPixEventRuntime.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\WinPixEventRuntime.1.0.230302001\build\WinPixEventRuntime.targets'))" />
   </Target>
 </Project>
