@@ -10,8 +10,7 @@
 #pragma once
 
 
-#include "d3dx12.h"
-#include <d3d12.h>
+#include "Graphics/d3dx12/include/directx/d3dx12.h"
 #include <DirectXMath.h>
 #include <memory>
 

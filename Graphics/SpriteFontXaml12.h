@@ -12,8 +12,8 @@
 #if defined(_XBOX_ONE) && defined(_TITLE)
 // #include <d3d12_x.h>
 #else
-#include "d3dx12.h"
-#include <d3d12.h>
+#include "Graphics/d3dx12/include/directx/d3dx12.h"
+#include "Graphics/d3dx12/include/directx/d3d12.h"
 #endif
 #include "SpriteBatchXaml12.h"
 

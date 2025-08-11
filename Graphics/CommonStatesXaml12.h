@@ -12,7 +12,7 @@
 #if defined(_XBOX_ONE) && defined(_TITLE)
 #include "d3dx12.h"
 #else
-#include <d3d12.h>
+#include "Graphics/d3dx12/include/directx/d3d12.h"
 #endif
 
 #include <memory>

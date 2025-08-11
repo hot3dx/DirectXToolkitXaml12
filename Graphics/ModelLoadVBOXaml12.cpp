@@ -110,7 +110,7 @@ std::unique_ptr<Model> DirectX::DXTKXAML12::Model::CreateFromVBO(const uint8_t* 
     mesh->opaqueMeshParts.emplace_back(part);
 
     std::unique_ptr<Model> model(new Model());
-    model->meshes.emplace_back(mesh);
+    model->meshes.push_back(mesh);
 
     return model;
 }

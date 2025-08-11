@@ -10,7 +10,7 @@
 
 #pragma once
 
-#include "Graphics\d3dx12.h"
+#include "Graphics/d3dx12/include/directx/d3dx12.h"
 #include "PlatformHelpersXaml12.h"
 
 

@@ -655,7 +655,7 @@ std::unique_ptr<Model> DirectX::DXTKXAML12::Model::CreateFromSDKMESH(const uint8
                 mesh->opaqueMeshParts.emplace_back(part);
         }
 
-        model->meshes.emplace_back(mesh);
+        model->meshes.push_back(mesh);
     }
 
     // Copy the materials and texture names into contiguous arrays

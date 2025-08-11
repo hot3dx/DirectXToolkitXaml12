@@ -9,7 +9,7 @@
 
 #pragma once
 
-#include <d3d12.h>
+#include "Graphics/d3dx12/include/directx/d3d12.h"
 #include <stdint.h>
 #include "RenderTargetStateXaml12.h"
 

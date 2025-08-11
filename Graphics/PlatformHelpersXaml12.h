@@ -12,8 +12,8 @@
 
 #pragma warning(disable : 4324)
 
-#include "d3dx12.h"
-#include <d3d12.h>
+#include "Graphics/d3dx12/include/directx/d3dx12.h"
+#include "Graphics/d3dx12/include/directx/d3d12.h"
 #include <exception>
 #include <memory>
 

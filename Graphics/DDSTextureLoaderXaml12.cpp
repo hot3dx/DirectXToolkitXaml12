@@ -183,7 +183,7 @@ namespace
 
                         AdjustPlaneResource(format, h, p, res);
 
-                        initData.emplace_back(res);
+                        initData.push_back(res);
                     }
                     else if (!j)
                     {

@@ -29,7 +29,7 @@ namespace
 
 
     // Collection types used when generating the geometry.
-    inline void index_push_back(DirectX::DXTKXAML12::IndexCollection& indices, size_t value)
+    inline void index_emplace_back(DirectX::DXTKXAML12::IndexCollection& indices, size_t value)
     {
         CheckIndexOverflow(value);
         indices.push_back(static_cast<uint16_t>(value));
@@ -106,13 +106,13 @@ void DirectX::DXTKXAML12::ComputeRectangleOrSquare(VertexCollection& vertices, I
 
         // Six indices (two triangles) per face.
         size_t vbase = vertices.size();
-        index_push_back(indices, vbase + 0);
-        index_push_back(indices, vbase + 1);
-        index_push_back(indices, vbase + 2);
+        index_emplace_back(indices, vbase + 0);
+        index_emplace_back(indices, vbase + 1);
+        index_emplace_back(indices, vbase + 2);
 
-        index_push_back(indices, vbase + 0);
-        index_push_back(indices, vbase + 2);
-        index_push_back(indices, vbase + 3);
+        index_emplace_back(indices, vbase + 0);
+        index_emplace_back(indices, vbase + 2);
+        index_emplace_back(indices, vbase + 3);
 
         // Four vertices per face.
         // (normal - side1 - side2) * tsize // normal // t0
@@ -181,13 +181,13 @@ void DirectX::DXTKXAML12::ComputeBox(VertexCollection& vertices, IndexCollection
 
         // Six indices (two triangles) per face.
         size_t vbase = vertices.size();
-        index_push_back(indices, vbase + 0);
-        index_push_back(indices, vbase + 1);
-        index_push_back(indices, vbase + 2);
+        index_emplace_back(indices, vbase + 0);
+        index_emplace_back(indices, vbase + 1);
+        index_emplace_back(indices, vbase + 2);
 
-        index_push_back(indices, vbase + 0);
-        index_push_back(indices, vbase + 2);
-        index_push_back(indices, vbase + 3);
+        index_emplace_back(indices, vbase + 0);
+        index_emplace_back(indices, vbase + 2);
+        index_emplace_back(indices, vbase + 3);
 
         // Four vertices per face.
         // (normal - side1 - side2) * tsize // normal // t0
@@ -268,13 +268,13 @@ void DirectX::DXTKXAML12::ComputeSphere(VertexCollection& vertices, IndexCollect
             size_t nextI = i + 1;
             size_t nextJ = (j + 1) % stride;
 
-            index_push_back(indices, i * stride + j);
-            index_push_back(indices, nextI * stride + j);
-            index_push_back(indices, i * stride + nextJ);
+            index_emplace_back(indices, i * stride + j);
+            index_emplace_back(indices, nextI * stride + j);
+            index_emplace_back(indices, i * stride + nextJ);
 
-            index_push_back(indices, i * stride + nextJ);
-            index_push_back(indices, nextI * stride + j);
-            index_push_back(indices, nextI * stride + nextJ);
+            index_emplace_back(indices, i * stride + nextJ);
+            index_emplace_back(indices, nextI * stride + j);
+            index_emplace_back(indices, nextI * stride + nextJ);
         }
     }
 
@@ -490,7 +490,7 @@ void DirectX::DXTKXAML12::ComputeGeoSphere(VertexCollection& vertices, IndexColl
             VertexPositionNormalTexture v = vertices[i];
             v.textureCoordinate.x = 1.0f;
             vertices.push_back(v);
-
+             
             // Now find all the triangles which contain this vertex and update them if necessary
             for (size_t j = 0; j < indices.size(); j += 3)
             {
@@ -653,9 +653,9 @@ namespace
             }
 
             size_t vbase = vertices.size();
-            index_push_back(indices, vbase);
-            index_push_back(indices, vbase + i1);
-            index_push_back(indices, vbase + i2);
+            index_emplace_back(indices, vbase);
+            index_emplace_back(indices, vbase + i1);
+            index_emplace_back(indices, vbase + i2);
         }
 
         // Which end of the cylinder is this?
@@ -711,13 +711,13 @@ void DirectX::DXTKXAML12::ComputeCylinder(VertexCollection& vertices, IndexColle
         vertices.push_back(VertexPositionNormalTexture(XMVectorAdd(sideOffset, topOffset), normal, textureCoordinate));
         vertices.push_back(VertexPositionNormalTexture(XMVectorSubtract(sideOffset, topOffset), normal, XMVectorAdd(textureCoordinate, g_XMIdentityR1)));
 
-        index_push_back(indices, i * 2);
-        index_push_back(indices, (i * 2 + 2) % (stride * 2));
-        index_push_back(indices, i * 2 + 1);
+        index_emplace_back(indices, i * 2);
+        index_emplace_back(indices, (i * 2 + 2) % (stride * 2));
+        index_emplace_back(indices, i * 2 + 1);
 
-        index_push_back(indices, i * 2 + 1);
-        index_push_back(indices, (i * 2 + 2) % (stride * 2));
-        index_push_back(indices, (i * 2 + 3) % (stride * 2));
+        index_emplace_back(indices, i * 2 + 1);
+        index_emplace_back(indices, (i * 2 + 2) % (stride * 2));
+        index_emplace_back(indices, (i * 2 + 3) % (stride * 2));
     }
 
     // Create flat triangle fan caps to seal the top and bottom.
@@ -768,9 +768,9 @@ void DirectX::DXTKXAML12::ComputeCone(VertexCollection& vertices, IndexCollectio
         vertices.push_back(VertexPositionNormalTexture(topOffset, normal, g_XMZero));
         vertices.push_back(VertexPositionNormalTexture(pt, normal, XMVectorAdd(textureCoordinate, g_XMIdentityR1)));
 
-        index_push_back(indices, i * 2);
-        index_push_back(indices, (i * 2 + 3) % (stride * 2));
-        index_push_back(indices, (i * 2 + 1) % (stride * 2));
+        index_emplace_back(indices, i * 2);
+        index_emplace_back(indices, (i * 2 + 3) % (stride * 2));
+        index_emplace_back(indices, (i * 2 + 1) % (stride * 2));
     }
 
     // Create flat triangle fan caps to seal the bottom.
@@ -830,13 +830,13 @@ void DirectX::DXTKXAML12::ComputeTorus(VertexCollection& vertices, IndexCollecti
             size_t nextI = (i + 1) % stride;
             size_t nextJ = (j + 1) % stride;
 
-            index_push_back(indices, i * stride + j);
-            index_push_back(indices, i * stride + nextJ);
-            index_push_back(indices, nextI * stride + j);
+            index_emplace_back(indices, i * stride + j);
+            index_emplace_back(indices, i * stride + nextJ);
+            index_emplace_back(indices, nextI * stride + j);
 
-            index_push_back(indices, i * stride + nextJ);
-            index_push_back(indices, nextI * stride + nextJ);
-            index_push_back(indices, nextI * stride + j);
+            index_emplace_back(indices, i * stride + nextJ);
+            index_emplace_back(indices, nextI * stride + nextJ);
+            index_emplace_back(indices, nextI * stride + j);
         }
     }
 
@@ -853,6 +853,8 @@ void DirectX::DXTKXAML12::ComputeTetrahedron(VertexCollection& vertices, IndexCo
 {
     vertices.clear();
     indices.clear();
+    vertices.resize(4*3);
+    indices.resize(4*3);
 
     static const XMVECTORF32 verts[4] =
     {
@@ -869,7 +871,7 @@ void DirectX::DXTKXAML12::ComputeTetrahedron(VertexCollection& vertices, IndexCo
         0, 3, 1,
         1, 3, 2
     };
-
+    size_t k = 0;
     for (size_t j = 0; j < _countof(faces); j += 3)
     {
         uint32_t v0 = faces[j];
@@ -881,20 +883,19 @@ void DirectX::DXTKXAML12::ComputeTetrahedron(VertexCollection& vertices, IndexCo
             XMVectorSubtract(verts[v2].v, verts[v0].v));
         normal = XMVector3Normalize(normal);
 
-        size_t base = vertices.size();
-        index_push_back(indices, base);
-        index_push_back(indices, base + 1);
-        index_push_back(indices, base + 2);
+        size_t base = k;// vertices.size();
+        indices.at(k) = (uint16_t)base;
+        indices.at(k+1) = (uint16_t)base + 1;
+        indices.at(k+2) = (uint16_t)base + 2;
 
         // Duplicate vertices to use face normals
         XMVECTOR position = XMVectorScale(verts[v0], size);
-        vertices.push_back(VertexPositionNormalTexture(position, normal, g_XMZero /* 0, 0 */));
-
+        vertices.at(k) = VertexPositionNormalTexture(position, normal, g_XMZero /* 0, 0 */);
         position = XMVectorScale(verts[v1], size);
-        vertices.push_back(VertexPositionNormalTexture(position, normal, g_XMIdentityR0 /* 1, 0 */));
-
+        vertices.at(k+1) = VertexPositionNormalTexture(position, normal, g_XMIdentityR0 /* 1, 0 */);
         position = XMVectorScale(verts[v2], size);
-        vertices.push_back(VertexPositionNormalTexture(position, normal, g_XMIdentityR1 /* 0, 1 */));
+        vertices.at(k+2) = VertexPositionNormalTexture(position, normal, g_XMIdentityR1 /* 0, 1 */);
+        k += 3;
     }
 
     // Built LH above
@@ -948,9 +949,9 @@ void DirectX::DXTKXAML12::ComputeOctahedron(VertexCollection& vertices, IndexCol
         normal = XMVector3Normalize(normal);
 
         size_t base = vertices.size();
-        index_push_back(indices, base);
-        index_push_back(indices, base + 1);
-        index_push_back(indices, base + 2);
+        index_emplace_back(indices, base);
+        index_emplace_back(indices, base + 1);
+        index_emplace_back(indices, base + 2);
 
         // Duplicate vertices to use face normals
         XMVECTOR position = XMVectorScale(verts[v0], size);
@@ -1065,17 +1066,17 @@ void DirectX::DXTKXAML12::ComputeDodecahedron(VertexCollection& vertices, IndexC
 
         size_t base = vertices.size();
 
-        index_push_back(indices, base);
-        index_push_back(indices, base + 1);
-        index_push_back(indices, base + 2);
+        index_emplace_back(indices, base);
+        index_emplace_back(indices, base + 1);
+        index_emplace_back(indices, base + 2);
 
-        index_push_back(indices, base);
-        index_push_back(indices, base + 2);
-        index_push_back(indices, base + 3);
+        index_emplace_back(indices, base);
+        index_emplace_back(indices, base + 2);
+        index_emplace_back(indices, base + 3);
 
-        index_push_back(indices, base);
-        index_push_back(indices, base + 3);
-        index_push_back(indices, base + 4);
+        index_emplace_back(indices, base);
+        index_emplace_back(indices, base + 3);
+        index_emplace_back(indices, base + 4);
 
         // Duplicate vertices to use face normals
         XMVECTOR position = XMVectorScale(verts[v0], size);
@@ -1166,9 +1167,9 @@ void DirectX::DXTKXAML12::ComputeIcosahedron(VertexCollection& vertices, IndexCo
         normal = XMVector3Normalize(normal);
 
         size_t base = vertices.size();
-        index_push_back(indices, base);
-        index_push_back(indices, base + 1);
-        index_push_back(indices, base + 2);
+        index_emplace_back(indices, base);
+        index_emplace_back(indices, base + 1);
+        index_emplace_back(indices, base + 2);
 
         // Duplicate vertices to use face normals
         XMVECTOR position = XMVectorScale(verts[v0], size);
@@ -1214,7 +1215,7 @@ namespace
         size_t vbase = vertices.size();
         Bezier::DXTKXAML12::CreatePatchIndices(tessellation, isMirrored, [&](size_t index)
                                    {
-                                       index_push_back(indices, vbase + index);
+                                       index_emplace_back(indices, vbase + index);
                                    });
 
                                    // Create the vertex data.

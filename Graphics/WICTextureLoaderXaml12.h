@@ -19,8 +19,8 @@
 
 #pragma once
 
-#include "d3dx12.h"
-#include <d3d12.h>
+#include "Graphics/d3dx12/include/directx/d3dx12.h"
+#include "Graphics/d3dx12/include/directx/d3d12.h"
 #include <stdint.h>
 #include <memory>
 #pragma comment(lib,"uuid.lib")
