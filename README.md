@@ -1,5 +1,6 @@
 # DirectXToolkitXaml12
 
+08_11_25 build 26100, tools v143, Visual Studio C++ 17.6.14
 ## The DirectXToolkitXaml12 is a DirectX 12 Toolkit Xaml Library
 
 ![App1 Example Screenshot](https://github.com/hot3dx/DirectXToolkitXaml12/blob/master/Assets/App1-DirectXToolKitXaml12-Sample-App.png)
