@@ -17,15 +17,15 @@
 #include <dxgi1_4.h>
 #include <dxgi1_5.h>
 #include <dxgi1_6.h>
-#include <d3d12.h>
-#include <Graphics/d3dx12.h>
+#include "Graphics/d3dx12/include/directx/d3d12.h"
+#include <Graphics/d3dx12/include/directx/d3dx12.h>
 #include <d3d11_3.h>
 #include <d2d1_3.h>
 #include <d2d1effects_2.h>
 #include <dwrite_3.h>
 #include <wincodec.h>
 // Uses NuGet.org package WinPixEventRuntime 1.0.220810001
-#include "packages\WinPixEventRuntime.1.0.230302001\Include\WinPixEventRuntime\pix3.h"
+#include "packages\WinPixEventRuntime.1.0.240308001\Include\WinPixEventRuntime\pix3.h"
 
 #include <DirectXColors.h>
 #include <DirectXMath.h>
